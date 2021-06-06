@@ -1,2 +1,18 @@
-<h1>Trains#index</h1>
-<p>Find me in app/views/trains/index.html.erb</p>
+<!-- 投稿履歴一覧ページ -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 mx-auto">
+      <h1 class="heading">投稿一覧</h1>
+
+      <!-- 投稿履歴一覧テーブル -->
+      <% if user_signed_in? %>
+        <%= render 'trains/login-index', trains: @trains %>
+      <% else %>
+        <%= render 'trains/public-index', trains: @trains %>
+      <% end %>
+    </div>
+    <div class="pagination mx-auto">
+      <%= paginate @trains %>
+    </div>
+  </div>
+</div>

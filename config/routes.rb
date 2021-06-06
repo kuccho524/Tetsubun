@@ -36,9 +36,9 @@ Rails.application.routes.draw do
   resources :messages, only: [:create]
 
   # 通知のルーティング
-  get 'notifications/index'
+  get 'notifications/index' => 'notifications#index', as: 'notifications'
 
   # 検索のルーティング
-  get 'searches/search'
+  get 'searches/search' => 'searches#search', as: 'search'
 
 end

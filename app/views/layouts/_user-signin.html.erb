@@ -1,0 +1,13 @@
+<!-- ユーザログイン時のナビゲーションの表示 -->
+<li>
+  <%= link_to ' マイページ', user_path(current_user), class: 'fas fa-user nav-link text-white' %>
+</li>
+<li>
+  <%= link_to ' 投稿一覧', trains_path, class: 'fas fa-folder nav-link text-white' %>
+</li>
+<li>
+  <%= link_to ' 投稿フォーム', new_train_path, method: :get, class: 'fas fa-share-square nav-link text-white' %>
+</li>
+<li>
+  <%= link_to ' ログアウト', destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt nav-link text-white' %>
+</li>
