@@ -1,0 +1,10 @@
+<!-- コメント一覧を表示 -->
+<% @train.train_comments.each do |train_comment| %>
+  <tr>
+    <td><%= train_comment.user.name %></td>
+    <td><%= train_comment.comment %></td>
+    <% if train_comment.user == current_user %>
+      <td><%= link_to 'Destroy', train_train_comment_path(train_comment.train_id, train_comment.id), method: :delete, remote: true, class: "btn btn-sm btn-danger" %></td>
+    <% end %>
+  </tr>
+<% end %>

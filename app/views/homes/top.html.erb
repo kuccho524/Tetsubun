@@ -1,2 +1,42 @@
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
+<div id="image-sliders">
+  <div id="train-images">
+    <div class="train-image1"></div>
+    <div class="train-image2"></div>
+    <div class="train-image3"></div>
+    <div class="train-image4"></div>
+    <div class="train-image5"></div>
+    <div class="train-image6"></div>
+    <div class="train-image7"></div>
+    <div class="train-image8"></div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 mx-auto">
+      <section id="about">
+        <h1 class="about-title">鉄分とは？</h1>
+        <div class="about-body">
+          <p>
+            「<strong>鉄分</strong>」とは、ここでは人間に必要なあの鉄分ではなく、<br>
+            鉄道ファンにとって必要な鉄道の成分のことを指します。<br>
+            とは言いながらも、当サイトは鉄道ファン / 非鉄道ファン問わず、<br>
+            このご時世で外出が難しくなった中でも鉄道を楽しみたい、<br>
+            旅行した気分を味わいという方の為に、<br>
+            少しでも尽力できればいいなと考えております。<br>
+            名前上、どうしても鉄道中心となってしまいますが、<br>
+            どうかこの「<strong>鉄分</strong>」を楽しんでくださいませ。
+          </p>
+        </div>
+      </section>
+      <section class="new-train-posts">
+        <h1 class="heading">新着投稿</h1>
+        <div class="d-flex flex-row flex-wrap">
+          <%= render 'homes/new-trains', train: @train %>
+        </div>
+      </section>
+      <section class="link mx-auto text-center">
+        <%= link_to '投稿一覧ページへ', trains_path, class: 'btn btn-primary' %>
+      </section>
+    </div>
+  </div>
+</div>
