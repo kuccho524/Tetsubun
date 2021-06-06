@@ -8,6 +8,13 @@ Bundler.require(*Rails.groups)
 
 module Tetsubun
   class Application < Rails::Application
+
+    # 標準のロケールを日本語に設定
+    config.i18n.default_locale = :ja
+
+    # タイムゾーンを東京に設定
+    config.time_zone = 'Asia/Tokyo'
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
