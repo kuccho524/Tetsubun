@@ -5,14 +5,14 @@ class RelationshipsController < ApplicationController
 
   # フォローする
   def create
+    @user = User.find(params[:user_id])
     current_user.follow(params[:user_id])
-    redirect_back(fallback_location: root_path)
   end
 
   # フォロー外す
   def destroy
+    @user = User.find(params[:user_id])
     current_user.unfollow(params[:user_id])
-    redirect_back(fallback_location: root_path)
   end
 
   # フォロー一覧画面

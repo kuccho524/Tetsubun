@@ -2,15 +2,15 @@
 <%= form_with model: train,local:true do |f| %>
   <%= render 'layouts/errors', obj: train %>
   <div class="form-group">
-    <%= f.label :画像 %>
+    <%= f.label :画像, class: "font-weight-bold" %>
     <%= f.attachment_field :train_image, class: "form-control-file train_image" %>
   </div>
   <div class="form-group">
-    <%= f.label :鉄道会社 %><br>
+    <%= f.label :鉄道会社, class: "font-weight-bold" %><br>
     <%= f.select :line, Train.lines.keys.to_a %>
   </div>
   <div class="form-group">
-    <%= f.label :本文 %>
+    <%= f.label :本文, class: "font-weight-bold" %>
     <%= f.text_area :body, class: 'form-control train_body' %>
   </div>
   <div class="form-group">

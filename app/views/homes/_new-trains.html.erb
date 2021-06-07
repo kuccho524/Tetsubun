@@ -7,7 +7,17 @@
           <%= attachment_image_tag train, :train_image, width: "100%" , height: "150px", fallback: "no_image.jpg" %>
         <% end %>
       </div>
+
       <div class="card-body">
+        <div class="card-name font-weight-bold">
+          <% if user_signed_in? %>
+            <%= link_to user_path(train.user) do %>
+              <%= train.user.name %>
+            <% end %>
+          <% else %>
+            <%= train.user.name %>
+          <% end %>
+        </div>
         <div class="card-train-line font-weight-bold"><%= train.line %></div>
         <div class="card-train-body"><%= train.body %></div>
       </div>
