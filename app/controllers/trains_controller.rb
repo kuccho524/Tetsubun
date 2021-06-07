@@ -56,14 +56,14 @@ class TrainsController < ApplicationController
   def destroy
     @train = Train.find(params[:id])
     @train.destroy
-    redirect_to :index, notice: "削除しました"
+    redirect_to user_path(@train.user), notice: "削除しました"
   end
 
   # ストロングパラメーター
   private
 
   def train_params
-    params.require(:train).permit(:train_image, :company, :body)
+    params.require(:train).permit(:train_image, :line, :body)
   end
 
 end

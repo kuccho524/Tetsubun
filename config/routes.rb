@@ -4,11 +4,7 @@ Rails.application.routes.draw do
   root to: 'homes#top'
 
   # ユーザ認証機能のルーティング
-  devise_for :users, controllers: {
-    sessions: 'users/sessions',
-    paswords: 'users/paswords',
-    registrations: 'users/registrations',
-  }
+  devise_for :users
 
   # ユーザのルーティング
   resources :users, only: [:show, :edit, :update] do

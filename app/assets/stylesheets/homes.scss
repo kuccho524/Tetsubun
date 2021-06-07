@@ -1,3 +1,33 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.about-title {
+  margin-top: 30px;
+  font-family: 'Kiwi Maru', serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.about-body {
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'Kiwi Maru', serif;
+}
+
+.new-train-posts > .heading {
+  text-align: center;
+  font-weight: bold;
+}
+
+.card-deck {
+  width: 25%;
+}
+
+.d-flex {
+  margin-top: 20px;
+}
+
+.link {
+  margin: 40px 0;
+}

@@ -27,7 +27,7 @@ class Train < ApplicationRecord
   end
 
   #enum
-  enum company: {
+  enum line: {
     JR: 0,
     阪急: 1,
     京阪: 2,

@@ -40,6 +40,7 @@ class UsersController < ApplicationController
 
   # ユーザ情報の更新機能
   def update
+    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to user_path(@user), notice: "ユーザ情報を更新しました。"
     else

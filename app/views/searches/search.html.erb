@@ -1,5 +1,4 @@
 <!-- 検索結果一覧 -->
-<!-- 投稿内容 -->
 <div class="container">
   <div class="row">
     <div class="col-sm-12 mx-auto">
@@ -24,7 +23,7 @@
                 <% end %>
               </td>
               <td><%= train.user.name %></td>
-              <td><%= train.company %></td>
+              <td><%= train.line %></td>
               <td><%= train.body %></td>
               <td class="comment_count">コメント数： <%= train.train_comments.count %></td>
             </tr>

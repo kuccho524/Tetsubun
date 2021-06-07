@@ -1,6 +1,8 @@
 <!-- ユーザの情報を表示 -->
-<%= attachment_image_tag(user, :profile_image, width: "100px", height: "100px", fallback: "no_image.jpg") %>
-<table>
+<div class="user-image">
+  <%= attachment_image_tag(user, :profile_image, width: "100%", height: "100px", fallback: "no_image.jpg") %>
+</div>
+<table class="user-detail">
   <th>ユーザ名</th>
   <th>　</th>
   <th><%= user.name %></th>
@@ -27,7 +29,7 @@
 <!-- 更新画面へのリンク -->
 <% if current_user != user %>
   <div class="follow_<%= user.id %>">
-    <%= render 'relationships/follow_btn', user: user %>
+    <%= render 'relationships/follow-btn', user: user %>
   </div>
 <% else %>
   <div class="edit-link">

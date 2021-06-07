@@ -12,9 +12,9 @@
   <tbody>
     <% trains.each do |train| %>
       <tr>
-        <td><%= attachment_image_tag(train, :train_image, :fill, 100, 100, fallback: "no_image.jpg") %></td>
+        <td><%= attachment_image_tag(train, :train_image, :fill, 50, 500, fallback: "no_image.jpg") %></td>
         <td><%= train.user.name %></td>
-        <td><%= train.company %></td>
+        <td><%= train.line %></td>
         <td><%= train.body %></td>
       </tr>
     <% end %>
