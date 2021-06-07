@@ -9,7 +9,7 @@ class Train < ApplicationRecord
 
   # バリデーション
   attachment :train_image, destroy: false
-  validates :body, length: { minimum: 3, maximum: 29 }
+  validates :body, length: { minimum: 3, maximum: 50 }
 
   # いいね
   def favorited_by?(user)

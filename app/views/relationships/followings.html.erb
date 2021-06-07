@@ -6,7 +6,7 @@
 
       <!-- フォローしている時としていない時の表示 -->
       <% if @users.empty? %>
-        <p>ユーザはいません</p>
+        <h3 class="no-follows text-center">ユーザはいません</h3>
       <% else %>
         <%= render 'relationships/index', users: @users %>
       <% end %>

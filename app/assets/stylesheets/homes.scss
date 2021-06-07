@@ -22,6 +22,11 @@
 
 .card-deck {
   width: 25%;
+  transition: all 0.3s ease 0s;
+}
+
+.card-deck:hover {
+  transform: scale(1.1, 1.1);
 }
 
 .d-flex {
@@ -30,10 +35,16 @@
 
 .card-name {
   margin-bottom: 5px;
+  font-family: 'Kosugi Maru', sans-serif;
 }
 
 .card-train-line {
   margin-bottom: 5px;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.card-train-body {
+  font-family: 'Kosugi Maru', sans-serif;
 }
 
 .link {
