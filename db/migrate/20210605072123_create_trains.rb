@@ -4,7 +4,7 @@ class CreateTrains < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.integer :line, default: 0
       t.text :body
-      t.string :tarin_image
+      t.string :train_image_id
 
       t.timestamps
     end

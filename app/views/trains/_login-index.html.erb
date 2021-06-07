@@ -14,7 +14,7 @@
       <tr>
         <td>
           <%= link_to train_path(train.id) do %>
-            <%= attachment_image_tag(train, :train_image, :fill, 100, 100, fallback: "no_image.jpg") %>
+            <%= attachment_image_tag(train, :train_image, :fill, 50, 50, fallback: "no_image.jpg") %>
           <% end %>
         </td>
         <td>
@@ -22,7 +22,7 @@
             <%= train.user.name %>
           <% end %>
         </td>
-        <td><%= train.company %></td>
+        <td><%= train.line %></td>
         <td><%= train.body %></td>
         <td id="favorite_<%= train.id %>"><%= render 'favorites/favorite-btn', train: train %></td>
         <td class="comment-count">コメント数： <%= train.train_comments.count %></td>

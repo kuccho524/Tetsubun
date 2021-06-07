@@ -2,12 +2,12 @@
 <div class="image text-center">
   <%= attachment_image_tag(train, :train_image, height: "500px", width: "70%", fallback: "no_image.jpg") %>
 </div>
-<div class="col-sm-8 mx-auto">
-  <table class="train-info">
+<div class="train-info col-sm-8 mx-auto">
+  <table>
     <tr>
       <th>会社</th>
       <td>　</td>
-      <td><%= train.company %></td>
+      <td><%= train.line %></td>
     </tr>
     <tr>
       <th>本文</th>
