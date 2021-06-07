@@ -4,7 +4,10 @@
 
 .links {
   margin-top: 20px;
-  margin-bottom: 30px;
+}
+
+.image {
+  margin-top: 20px;
 }
 
 .train-info {
@@ -17,4 +20,8 @@
 
 .comment-form {
   margin-bottom: 40px;
+}
+
+.form-group:last-child {
+  margin-bottom: 30px;
 }
