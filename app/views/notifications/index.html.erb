@@ -1,8 +1,9 @@
 <div>
   <h4 class="sub-title">通知</h4>
-  <% if @notifications.exists? %>
+  <% if @notifications.exists? or !@notifications.nil? %>
     <div class="users-index">
-      <%= render 'notifications/index', notification: @notification %>
+      <%= link_to '全削除する', notifications_destroy_all_path(@notifications), method: :delete %>
+      <%= render 'notifications/notifications', notifications: @notifications %>
       <%= paginate @notifications %>
     </div>
   <% else %>

@@ -33,6 +33,7 @@ Rails.application.routes.draw do
 
   # 通知のルーティング
   get 'notifications/index' => 'notifications#index', as: 'notifications'
+  delete 'notifications/destroy_all' => 'notifications#destroy_all'
 
   # 検索のルーティング
   get 'searches/search' => 'searches#search', as: 'search'

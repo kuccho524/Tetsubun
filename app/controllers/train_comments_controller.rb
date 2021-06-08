@@ -8,7 +8,9 @@ class TrainCommentsController < ApplicationController
     @train_comment = TrainComment.new(train_comment_params)
     @train_comment.train_id = @train.id
     @train_comment.user_id = current_user.id
-    @train_comment.save
+    if @train_comment.save
+      @train_comment.create_notification_comment!(current_user, @train_comment.id)
+    end
   end
 
   # コメント削除機能
