@@ -2,6 +2,54 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.no-message {
+  text-align: center;
+  margin: 40px 0;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
 .message-form {
   margin: 30px 0;
+}
+
+.chat-rooms {
+  margin: 30px 0;
+}
+
+.card-deck {
+  margin-top: 20px;
+}
+
+.card-name {
+  margin-bottom: 5px;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.card-message {
+  margin-bottom: 5px;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.chat {
+  margin: 20px 0;
+}
+
+.chat-users {
+  display: flex;
+  justify-content: center;
+}
+
+.messsage-submit-btn {
+  margin: 30px 0;
+}
+
+.chat-rooms {
+
+  &__chat {
+
+    &--chat-body {
+      color: black;
+      text-decoration: none;
+    }
+  }
 }

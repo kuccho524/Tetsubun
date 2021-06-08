@@ -5,6 +5,7 @@ class RoomsController < ApplicationController
 
   # チャットルーム一覧画面
   def index
+    @rooms = current_user.rooms.joins(:messages).includes(:messages).order("messages.created_at DESC")
   end
 
   # チャットルーム

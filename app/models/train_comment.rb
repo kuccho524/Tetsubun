@@ -1,6 +1,6 @@
 class TrainComment < ApplicationRecord
 
-  # コメントのテーブル
+  # コメントのモデル
 
   # アソシエーション
   belongs_to :user

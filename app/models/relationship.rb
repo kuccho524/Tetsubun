@@ -1,6 +1,6 @@
 class Relationship < ApplicationRecord
 
-  # フォロー機能の中間テーブル
+  # フォロー機能の中間モデル
 
   # アソシエーション
   belongs_to :follower, class_name: "User"

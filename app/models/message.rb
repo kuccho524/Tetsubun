@@ -1,6 +1,6 @@
 class Message < ApplicationRecord
 
-  # メッセージ機能のテーブル
+  # メッセージ機能のモデル
 
   # アソシエーション
   belongs_to :user
