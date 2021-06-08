@@ -1,6 +1,6 @@
 class Entry < ApplicationRecord
 
-  # DM機能の中間テーブル
+  # DM機能の中間モデル
 
   # アソシエーション
   belongs_to :user

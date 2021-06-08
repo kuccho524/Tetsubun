@@ -1,10 +1,13 @@
 <!-- 非ログイン時のナビゲーションの表示 -->
-<li>
+<li class="balloonoya">
   <%= link_to '', trains_path, class: 'fas fa-folder nav-link text-white' %>
+  <span class="balloon">投稿一覧</span>
 </li>
-<li>
+<li class="balloonoya">
   <%= link_to '', new_user_registration_path, method: :get, class: 'fas fa-user-plus nav-link text-white' %>
+  <span class="balloon">新規登録</span>
 </li>
-<li>
+<li class="balloonoya">
   <%= link_to '', new_user_session_path, method: :get, class: 'fas fa-sign-in-alt nav-link text-white' %>
+  <span class="balloon">ログイン</span>
 </li>

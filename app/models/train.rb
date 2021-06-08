@@ -1,11 +1,12 @@
 class Train < ApplicationRecord
 
-  # 鉄道のテーブル
+  # 鉄道のモデル
 
   # アソシエーション
   belongs_to :user
   has_many :train_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :notifications, dependent: :destroy
 
   # バリデーション
   attachment :train_image, destroy: false
@@ -24,6 +25,16 @@ class Train < ApplicationRecord
     else
       Train.all
     end
+  end
+
+  # 通知
+  def create_notification_by(current_user)
+    notification = current_user.active_notifications.new(
+      train_id:self.id,
+      visited_id:self.user.id,
+      action:"favorite"
+    )
+    notification.save if notification.valid?
   end
 
   #enum

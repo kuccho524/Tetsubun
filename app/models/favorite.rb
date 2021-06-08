@@ -1,6 +1,6 @@
 class Favorite < ApplicationRecord
 
-  # いいね機能のテーブル
+  # いいね機能のモデル
 
   # アソシエーション
   belongs_to :user

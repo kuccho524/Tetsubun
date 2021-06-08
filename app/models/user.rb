@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # ユーザのテーブル
+  # ユーザのモデル
 
   # アソシエーション
   has_many :trains, dependent: :destroy
@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy
+  has_many :rooms, through: :entries
 
   # フォロー機能のアソシエーション
   # 自分がフォローされる側の関係性
@@ -22,6 +23,10 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_of_relationships, source: :follower
   # 自分がフォローしている人
   has_many :followings, through: :relationships, source: :followed
+
+  # 通知機能のアソシエーション
+  has_many :active_notifications, class_name: "Notification", foreign_key: "visiter_id", dependent: :destroy
+  has_many :passive_notifications, class_name: "Notification", foreign_key: "visited_id", dependent: :destroy
 
   # フォローする
   def follow(user_id)

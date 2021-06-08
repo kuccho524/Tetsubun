@@ -33,7 +33,7 @@
       <!-- コメント入力フォーム -->
       <div class="comment-form mx-auto">
         <%= form_with model:[@train, @train_comment] do |f| %>
-          <%= f.text_area :comment, size: '80x5' %><br>
+          <%= f.text_area :comment, size: '70x5' %><br>
           <%= f.submit '送信' %>
         <% end %>
       </div>
