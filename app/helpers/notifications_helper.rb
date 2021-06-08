@@ -5,17 +5,21 @@ module NotificationsHelper
   end
 
   def notification_form(notification)
+    @visitor = notification.visitor
     @comment = nil
-    visiter = link_to notification.visiter.name, notification.visiter, style: "font-weight: bold;"
-    your_post = link_to 'あなたの投稿', notification.train, style: "font-weight: bold;", remote: true
+
+    #notification.actionがfollowかfavoriteかcommentか
     case notification.action
       when "follow" then
-        "#{visiter}があなたをフォローしました"
+        tag.a(notification.visitor.name, href: user_path(@visitor), style: "font-weight: bold;")+"があなたをフォローしました"
       when "favorite" then
-        "#{visiter}が#{your_post}にいいね！しました"
-      when "comment" then
-        @comment = Comment.find_by(id:notification.comment_id)&.content
-        "#{visiter}が#{your_post}にコメントしました"
+        @train = notification.train_id
+        @user = @train.nser
+        tag.a(notification.visitor.name, href: user_path(@visitor), style: "font-weight: bold;")+"が"+tag.a('あなたの投稿', href: train_path(notification.train_id), style: "font-weight: bold;")+"にいいねしました"
+      when "train_comment" then
+        @visiter_train_comment = notification.train_comment_id
+        @train_comment = TrainComment.find_by(id: @visiter_train_comment)&.content
+        tag.a(@visitor.name, href: user_path(@visitor), style: "font-weight: bold;")+"が"+tag.a('あなたの投稿', href: train_path(notification.train_id), style: "font-weight: bold;")+"にコメントしました"
     end
   end
 end

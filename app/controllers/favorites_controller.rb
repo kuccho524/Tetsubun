@@ -7,11 +7,8 @@ class FavoritesController < ApplicationController
   def create
     @train = Train.find(params[:train_id])
     favorite = @train.favorites.new(user_id: current_user.id)
-    @train.create_notification_by(current_user)
     favorite.save
-    respond_to do |format|
-      format.js
-    end
+    @train.create_notification_by(current_user)
   end
 
   # いいね外す

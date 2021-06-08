@@ -28,12 +28,8 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
          <ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
-
-            <!-- ユーザがログインしている時の表示 -->
             <%= render 'layouts/user-signin' %>
           <% else %>
-
-            <!-- ユーザーがログインしていない時の表示 -->
             <%= render 'layouts/nouser' %>
           <% end %>
         </ul>
