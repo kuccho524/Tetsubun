@@ -9,7 +9,7 @@ class TrainCommentsController < ApplicationController
     @train_comment.train_id = @train.id
     @train_comment.user_id = current_user.id
     if @train_comment.save
-      @train_comment.create_notification_comment!(current_user, @train_comment.id)
+      @train_comment.create_notification_train_comment!(current_user, @train_comment.id)
     end
   end
 

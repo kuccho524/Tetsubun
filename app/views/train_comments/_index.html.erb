@@ -1,7 +1,7 @@
 <!-- コメント一覧を表示 -->
 <% @train.train_comments.each do |train_comment| %>
   <tr>
-    <td><%= train_comment.user.name %></td>
+    <td class="font-weight-bold"><%= train_comment.user.name %></td>
     <td>　</td>
     <td><%= train_comment.comment %></td>
     <% if train_comment.user == current_user %>

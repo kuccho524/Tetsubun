@@ -1,8 +1,15 @@
 <hr>
   <% if messages.present? %>
     <% messages.each do |message| %>
-      <strong class="message"><%= message.message %></strong>
-      <small>by <strong><a href="/users/<%= message.user_id %>"><%= message.user.name %>さん</a></strong></small>
+      <% if message.user == current_user %>
+        <div class="right-message">
+          <strong><%= message.message %></strong>
+        </div>
+      <% else %>
+        <div class="left-message">
+          <strong><%= message.message %></strong>
+        </div>
+      <% end %>
       <hr>
     <% end %>
   <% else %>

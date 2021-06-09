@@ -4,13 +4,14 @@
     <div class="col-sm-12 mx-auto">
       <h1 class="heading">チャット</h1>
       <div class="chat">
+        
+        <!-- チャット部屋のユーザを表示 -->
         <div class="chat-users">
-          <!-- チャット部屋のユーザを表示 -->
           <%= render 'rooms/chat-users', entries: @entries %>
         </div>
-
+        
+        <!-- メッセージを表示 -->
         <div class="chat-messages">
-          <!-- メッセージを表示 -->
           <%= render 'messages/messages', messages: @messages %>
         </div>
       </div>
