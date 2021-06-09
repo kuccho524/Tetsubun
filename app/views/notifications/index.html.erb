@@ -1,8 +1,8 @@
+<% notifications = @notifications.where.not(visitor_id: current_user.id) %>
 <div>
   <h4 class="sub-title">通知</h4>
-  <% if @notifications.exists? or !@notifications.nil? %>
+  <% if @notifications.exists? %>
     <div class="users-index">
-      <%= link_to '全削除する', notifications_destroy_all_path(@notifications), method: :delete %>
       <%= render 'notifications/notifications', notifications: @notifications %>
       <%= paginate @notifications %>
     </div>
