@@ -30,6 +30,15 @@
   font-family: 'Kosugi Maru', sans-serif;
 }
 
+.chat-background {
+  background-color: #66ccff;
+  margin: 30px 0;
+}
+
+.top-link {
+  margin-bottom: 40px;
+}
+
 .chat {
   margin: 20px 0;
 }
@@ -39,12 +48,89 @@
   justify-content: center;
 }
 
+.messages {
+  margin: 20px 0;
+}
+
 .right-message {
   text-align: right;
 }
 
-.left-message {
+.balloon-right {
+  display: inline-block;
+  position: relative;
+  margin: 0 0 10px 50px;
+  padding: 10px;
+  max-width: 250px;
+  border-radius: 12px;
+  background: #30e852;
+}
+
+.balloon-right strong {
   text-align: left;
+  display: inline-block;
+  position: relative;
+  margin: 0 10px 0 0;
+  padding: 8px;
+  max-width: 250px;
+  border-radius: 12px;
+  background: #30e852;
+  font-size: 15px；
+}
+
+.balloon-right:after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: -19px;
+  border: 8px solid transparent;
+  border-left: 18px solid #30e852;
+  -webkit-transform: rotate(-35deg);
+  transform: rotate(-35deg);
+}
+
+.left-message {
+  width: 100%;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.left-message .chat-icon {
+  float: left;
+  margin-right: -50px;
+  width: 40px;
+}
+
+.left-message .profile_image {
+  width: 100%;
+  height: auto;
+}
+
+.balloon-left {
+  display: inline-block;
+  position: relative;
+  margin: 0 0 0 50px;
+  padding: 10px;
+  max-width: 250px;
+  border-radius: 12px;
+  background: #edf1ee;
+}
+
+.balloon-left:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px;
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #edf1ee;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+
+.balloon-left strong {
+  margin: 0;
+  padding: 0;
 }
 
 .messsage-submit-btn {

@@ -38,7 +38,7 @@
       <div class="comment-form mx-auto">
         <%= form_with model:[@train, @train_comment] do |f| %>
           <%= f.text_area :comment, size: '70x5' %><br>
-          <%= f.submit '送信', class "btn btn-success" %>
+          <%= f.submit '送信', class: "btn btn-success" %>
         <% end %>
       </div>
     </div>
