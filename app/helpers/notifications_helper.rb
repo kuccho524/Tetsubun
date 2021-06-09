@@ -6,6 +6,7 @@ module NotificationsHelper
 
   def notification_form(notification)
     @visitor = notification.visitor
+    your_train = link_to 'あなたの投稿', train_path(notification), style: "font-weight: bold;"
     @comment = nil
 
     #notification.actionがfollowかfavoriteかcommentか

@@ -91,50 +91,50 @@ main {
 }
 
 .train-image1 {
- background-image: url('DSC_0354.JPG');
- // background-image: image-url('DSC_0354.JPG');
+ background-image: url("DSC_0354.JPG");
+ // background-image: image-url("DSC_0354.JPG");
  background-size: cover;
 }
 
 .train-image2 {
  background-image: url('DSC_0596.JPG');
- // background-image: image-url('DSC_0596.JPG');
+ // background-image: image-url("DSC_0596.JPG");
  background-size: cover;
 }
 
 .train-image3 {
  background-image: url('DSC_0594.JPG');
- // background-image: image-url('DSC_0594.JPG');
+ // background-image: image-url("DSC_0594.JPG");
  background-size: cover;
 }
 
 .train-image4 {
  background-image: url('DSC_0495.JPG');
- // background-image: image-url('DSC_0495.JPG');
+ // background-image: image-url("DSC_0495.JPG");
  background-size: cover;
 }
 
 .train-image5 {
  background-image: url('DSC_0330.JPG');
- // background-image: image-url('DSC_0330.JPG');
+ // background-image: image-url("DSC_0330.JPG");
  background-size: cover;
 }
 
 .train-image6 {
  background-image: url('DSC_0328.JPG');
- // background-image: image-url('DSC_0328.JPG');
+ // background-image: image-url("DSC_0328.JPG");
  background-size: cover;
 }
 
 .train-image7 {
  background-image: url('DSC_0278.JPG');
- // background-image: image-url('DSC_0278.JPG');
+ // background-image: image-url("DSC_0278.JPG");
  background-size: cover;
 }
 
 .train-image8 {
  background-image: url('DSC_0155.JPG');
- // background-image: image-url('DSC_0155.JPG');
+ // background-image: image-url("DSC_0155.JPG");
  background-size: cover;
 }
 
@@ -156,6 +156,10 @@ main {
 .actions {
  font-family: 'Kosugi Maru', sans-serif;
  margin: 30px 0;
+}
+
+.profile_image {
+  border-radius: 100%;
 }
 
 #back {
