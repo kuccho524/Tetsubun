@@ -8,7 +8,7 @@ class FavoritesController < ApplicationController
     @train = Train.find(params[:train_id])
     favorite = @train.favorites.new(user_id: current_user.id)
     favorite.save
-    @train.create_notification_by(current_user)
+    @train.create_notification_favorite!(current_user)
   end
 
   # いいね外す
