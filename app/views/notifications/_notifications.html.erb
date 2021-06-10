@@ -12,20 +12,24 @@
       <% case notification.action
         when 'follow' then %>
         <p>あなたをフォローしました</p>
-      <% when 'favorite' %>
+      <% when 'favorite' then %>
         <%= link_to 'あなたの投稿', train_path(notification.train), style: "font-weight: bold;" %>
         <p>にいいねしました</p>
-      <% when 'train_comment' %>
-        <% if notification.train.user_id == visited.id %>
-          <%= link_to "あなたの投稿", notification.train, style: "font-weight: bold;" %>
-        <% else %>
-          <%= link_to train_path(notification.train) do %>
-            <%= attachment_image_tag(notification.train.user, :profile_image, fallback: "no_image.jpg", size: "50x50", class: "profile-img-circle") %>
+      <% when 'train_comment' then %>
+        <% if notification.train %>
+          <% if notification.train.user_id == visited.id %>
+            <%= link_to "あなたの投稿", notification.train, style: "font-weight: bold;" %>
+            <p>にコメントしました</p>
+          <% else %>
+            <%= link_to train_path(notification.train) do %>
+              <%= attachment_image_tag(notification.train.user, :profile_image, fallback: "no_image.jpg", size: "50x50", class: "profile-img-circle") %>
+            <% end %>
           <% end %>
-          <p><%= notification.train.user.name %>さんの投稿にコメントしました</p>
         <% end %>
-        <% TrainComment.find_by(id: notification.train_comment_id)&.train_comment %>
+        <% TrainComment.find_by(train_id: notification.train_comment_id)&.train_comment %>
         <%= time_ago_in_words(notification.created_at).upcase %>
+      <% else %>
+          <p>何もありません</p>
       <% end %>
     </div>
   <% end %>
