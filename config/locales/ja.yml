@@ -1,12 +1,12 @@
 ja:
  activerecord:
    models:
-     user: "ユーザー"
+     user: "ユーザ"
    attributes:
      user:
       email: "メールアドレス"
       password: "パスワード"
-      name: "ユーザー名"
+      name: "ユーザ名"
       introduction: "紹介文"
 
      train:
