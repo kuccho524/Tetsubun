@@ -18,7 +18,7 @@
       <% when 'train_comment' then %>
         <% if notification.train %>
           <% if notification.train.user_id == visited.id %>
-            <%= link_to "あなたの投稿", notification.train, style: "font-weight: bold;" %>
+            <%= link_to "あなたの投稿", train_path(notification.train), style: "font-weight: bold;" %>
             <p>にコメントしました</p>
           <% else %>
             <%= link_to train_path(notification.train) do %>
