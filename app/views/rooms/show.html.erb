@@ -1,18 +1,18 @@
 <script type="text/javascript">
-$(document).ready(function(){
-	$(window).on("load",function(){
-		$('html,body').animate(
-      { scrollTop: $('html,body').get(0).scrollHeight }
-    );
-  });
-  $(window).on('keypress',function(e){
-    if(e.keyCode === 13){
-    	$('html,body').animate(
+  $(document).ready(function(){
+  	$(window).on("load",function(){
+  		$('html,body').animate(
         { scrollTop: $('html,body').get(0).scrollHeight }
-    	 );
-    }
+      );
+    });
+    $(window).on('keypress',function(e){
+      if(e.keyCode === 13){
+      	$('html,body').animate(
+          { scrollTop: $('html,body').get(0).scrollHeight }
+      	 );
+      }
+    });
   });
-});
 </script>
 
 <!-- チャット画面 -->

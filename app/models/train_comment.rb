@@ -8,9 +8,9 @@ class TrainComment < ApplicationRecord
   has_many :notifications, dependent: :destroy
 
   # バリデーション
-  validates :comment, presence: true
+  validates :comment, length: { maximum: 140 }, presence: true
 
-  # コメントの通知
+   # コメントの通知
   def create_notification_train_comment!(current_user, train_comment_id)
     # 自分以外にコメントしている人をすべて取得し、全員に通知を送る
     temp_ids = TrainComment.select(:user_id).where(train_id: id).where.not(user_id: current_user.id).distinct

@@ -1,28 +1,32 @@
-<% visitor = notification.visitor %>
-<% visited = notification.visited %>
-<div class="user-view clearfix ">
-  <%= link_to user_path(visitor) do %>
-    <%= attachment_image_tag(visitor, :profile_image, :fill,100,100, fallback: "no_image.jpg", size: "50x50", class:"profile-img-circle") %>
-    <p><strong><%= visitor.name %></strong>さんが</p>
-  <% end %>
-
-  <% case notification.action
-    when 'follow' then %>
-    <p>あなたをフォローしました</p>
-  <% when 'favorite' %>
-    <%= link_to 'あなたの投稿', train_path(notification.train), style: "font-weight: bold;" do %>
-      <p>にいいねしました</p>
-    <% end %>
-  <% when 'comment' %>
-    <% if notification.post.user_id == visited.id %>
-      <%= link_to "あなたの投稿", notification.train, style: "font-weight: bold;" %>
-    <% else %>
-      <%= link_to train_path(notification.train) do %>
-        <%= attachment_image_tag(notification.train.user, :profile_image, :fill,100,100, fallback: "no_image.jpg", size: "50x50", class:"profile-img-circle") %>
-        <p><%= notification.train.user.name %>さんの投稿にコメントしました</p>
+<section class="notification-table">
+  <% notifications.each do |notification| %>
+    <% visitor = notification.visitor %>
+    <% visited = notification.visited %>
+    <div class="notification-user-image">
+      <%= link_to user_path(visitor) do %>
+        <%= attachment_image_tag(visitor, :profile_image, fallback: "no_image.jpg", size: "50x50", class:"profile-img-circle") %>
+        <p><strong><%= visitor.name %></strong>さんが</p>
       <% end %>
-    <% end %>
-    <% TrainComment.find_by(id: notification.train_comment_id)&.train_comment %>
-    <%= time_ago_in_words(notification.created_at).upcase %>
+    </div>
+    <div class="notification-content">
+      <% case notification.action
+        when 'follow' then %>
+        <p>あなたをフォローしました</p>
+      <% when 'favorite' %>
+        <%= link_to 'あなたの投稿', train_path(notification.train), style: "font-weight: bold;" %>
+        <p>にいいねしました</p>
+      <% when 'train_comment' %>
+        <% if notification.train.user_id == visited.id %>
+          <%= link_to "あなたの投稿", notification.train, style: "font-weight: bold;" %>
+        <% else %>
+          <%= link_to train_path(notification.train) do %>
+            <%= attachment_image_tag(notification.train.user, :profile_image, fallback: "no_image.jpg", size: "50x50", class: "profile-img-circle") %>
+          <% end %>
+          <p><%= notification.train.user.name %>さんの投稿にコメントしました</p>
+        <% end %>
+        <% TrainComment.find_by(id: notification.train_comment_id)&.train_comment %>
+        <%= time_ago_in_words(notification.created_at).upcase %>
+      <% end %>
+    </div>
   <% end %>
-</div>
+</section>
