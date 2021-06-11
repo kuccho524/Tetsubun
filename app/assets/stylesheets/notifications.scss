@@ -1,3 +1,17 @@
 // Place all the styles related to the notifications controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.notification-table {
+  margin: 40px 0;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.notification_all_delete {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.zero-notification {
+  font-family: 'Kosugi Maru', sans-serif;
+}
