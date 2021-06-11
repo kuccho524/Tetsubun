@@ -5,14 +5,28 @@
       <h1 class="heading">通知一覧</h1>
     </div>
   </div>
+
+  <!-- 通知内容を表示 -->
   <div class="row">
-    <div class="notification-index col-sm-10 mx-auto">
-      <% if @notifications.exists? %>
-        <%= render 'notifications/notifications', notifications: @notifications %>
+    <div class="col-sm-8 mx-auto">
+      <section class="notification_all_delete">
+        <%= link_to '通知内容を全て削除する', notification_all_delete_path, method: :delete, data: { confirm: '通知内容を削除しますか？' }, class: "btn btn-danger" %>
+      </section>
+
+      <section class="notification-table">
+        <% if @notifications.exists? %>
+          <%= render 'notifications/notifications', notifications: @notifications %>
+        <% else %>
+
+          <!-- 通知がない時 -->
+          <h3 class="zero-notification text-center">通知はありません</h3>
+        <% end %>
+      </section>
+
+      <!-- ページング -->
+      <div class="pagination mx-auto">
         <%= paginate @notifications %>
-      <% else %>
-        <h3>通知はありません</h3>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
