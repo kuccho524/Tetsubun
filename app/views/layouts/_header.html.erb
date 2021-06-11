@@ -4,7 +4,7 @@
     <div class="container">
 
       <!-- Top画面へのリンクを表示 -->
-      <a href="/" class="home-icon navbar-brand text-white" data-turbolinks="false"><%= image_tag asset_path("電車アイコン.png", alt: "topアイコン") %></a>
+      <a href="/" class="home-icon navbar-brand text-white" data-turbolinks="false"><img src="<%= asset_path "電車アイコン.png" %>"/></a>
 
       <!-- ユーザがログイン時に名前を表示する -->
       <% if user_signed_in? %>
