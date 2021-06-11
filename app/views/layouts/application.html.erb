@@ -18,9 +18,7 @@
       <main>
         <%= yield %>
         <span id="back">
-          <a href="#">
-            <%= image_tag asset_path("上向きの矢印のアイコン素材.png", alt: "一番上に戻るアイコン") %>
-          </a>
+          <a href="#" class="top-icon"></a>
         </span>
       </main>
     <%= render 'layouts/footer' %>

@@ -23,11 +23,11 @@
  margin: 5px 5px 5px 20px;
 }
 
-.top-icon {
+.home-icon {
  transition: all 0.3s ease 0s;
 }
 
-.top-icon:hover {
+.home-icon:hover {
  transform: scale(1.3, 1.3);
 }
 
@@ -91,41 +91,58 @@ main {
 }
 
 .train-image1 {
+ width: 100%;
+ height: 500px;
  background-image:image-url("/assets/images/DSC_0354.JPG");
  background-size: cover;
+ background-position: center;
 }
 
 .train-image2 {
+ width: 100%;
+ height: 500px;
  background-image:image-url("/assets/images/DSC_0596.JPG");
  background-size: cover;
 }
 
 .train-image3 {
+ width: 100%;
+ height: 500px;
  background-image:image-url("/assets/images/DSC_0594.JPG");
  background-size: cover;
 }
 
 .train-image4 {
+ width: 100%;
+ height: 500px;
  background-image:image-url("/assets/images/DSC_0495.JPG");
  background-size: cover;
 }
 
 .train-image5 {
+ width: 100%;
+ height: 500px;
  background-image:image-url("/assets/images/DSC_0330.JPG");
  background-size: cover;
 }
 
 .train-image6 {
+ width: 100%;
+ height: 500px;
  background-image:image-url("/assets/images/DSC_0328.JPG");
  background-size: cover;
 }
 
 .train-image7 {
+ width: 100%;
+ height: 500px;
  background-image:image-url("/assets/images/DSC_0278.JPG");
  background-size: cover;
 }
 
 .train-image8 {
+ width: 100%;
+ height: 500px;
  background-image:image-url("/assets/images/DSC_0155.JPG");
  background-size: cover;
 }
@@ -160,7 +177,8 @@ main {
   right: 20px;
   bottom: 20px;
 }
-#back img {
+
+#back .top-icon {
   width: 50px;
 }
 
