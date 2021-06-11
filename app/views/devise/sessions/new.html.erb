@@ -1,0 +1,37 @@
+<!-- ログイン画面 -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 mx-auto">
+      <h1 class="heading">ログイン</h1>
+
+      <!-- ログイン入力フォーム -->
+      <%= form_with model: @user, url: user_session_path, local:true do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="field">
+          <%= f.label :ユーザー名 %><br />
+          <%= f.text_field :name, autofocus: true, class: "name" %>
+        </div>
+        <div class="field" style="margin-top: 20px;">
+          <%= f.label :メールアドレス %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+        <div class="field", style="margin-top: 20px;">
+          <%= f.label :パスワード %><br />
+          <%= f.password_field :password, autocomplete: "current-password" %>
+        </div>
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :パスワードを記憶する %>
+          </div>
+        <% end %>
+        <div class="actions", style="margin-top: 20px;">
+          <%= f.submit "ログイン", class: "btn btn-success" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

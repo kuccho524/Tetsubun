@@ -1,3 +1,40 @@
 // Place all the styles related to the trains controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.links {
+  margin-top: 20px;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.image {
+  margin-top: 20px;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.train-info {
+  margin: 30px 0;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.table {
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.train-comments {
+  margin-bottom: 30px;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.comment-form {
+  margin-bottom: 40px;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.form-group {
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.form-group:last-child {
+  margin-bottom: 30px;
+}

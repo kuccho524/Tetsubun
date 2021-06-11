@@ -39,15 +39,20 @@ ActiveRecord::Schema.define(version: 2021_06_05_072644) do
   end
 
   create_table "notifications", force: :cascade do |t|
-    t.integer "visiter_id"
-    t.integer "visited_id"
+    t.integer "visitor_id", null: false
+    t.integer "visited_id", null: false
     t.integer "train_id"
+    t.integer "train_comment_id"
     t.integer "message_id"
-    t.integer "comment_id"
-    t.string "action"
+    t.string "action", default: "", null: false
     t.boolean "checked", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["message_id"], name: "index_notifications_on_message_id"
+    t.index ["train_comment_id"], name: "index_notifications_on_train_comment_id"
+    t.index ["train_id"], name: "index_notifications_on_train_id"
+    t.index ["visited_id"], name: "index_notifications_on_visited_id"
+    t.index ["visitor_id"], name: "index_notifications_on_visitor_id"
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -75,7 +80,7 @@ ActiveRecord::Schema.define(version: 2021_06_05_072644) do
     t.integer "user_id"
     t.integer "line", default: 0
     t.text "body"
-    t.string "tarin_image"
+    t.string "train_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -88,7 +93,7 @@ ActiveRecord::Schema.define(version: 2021_06_05_072644) do
     t.datetime "remember_created_at"
     t.string "name"
     t.text "introduction"
-    t.string "profile_image"
+    t.string "profile_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

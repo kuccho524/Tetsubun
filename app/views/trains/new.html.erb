@@ -1,2 +1,13 @@
-<h1>Trains#new</h1>
-<p>Find me in app/views/trains/new.html.erb</p>
+<!-- 新規投稿画面 -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 mx-auto">
+      <h1 class="heading">新規投稿</h1>
+    </div>
+    <div class="col-sm-8 mx-auto">
+
+      <!-- 新規投稿フォーム -->
+      <%= render 'trains/new-form', train: @train %>
+    </div>
+  </div>
+</div>

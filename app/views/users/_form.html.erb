@@ -1,0 +1,19 @@
+<!-- ユーザー情報編集フォーム -->
+<%= form_with model: user, url: user_path, local:true do |f| %>
+   <%= render 'layouts/errors', obj: user %>
+   <div class="form-group">
+     <%= f.label :プロフィール画像, class: "font-weight-bold" %>
+     <%= f.attachment_field :profile_image, class: "form-control-file user_image" %>
+   </div>
+   <div class="form-group">
+     <%= f.label :ユーザ名, class: "font-weight-bold" %>
+     <%= f.text_field :name, class: "form-control name" %>
+   </div>
+   <div class="form-group">
+     <%= f.label :紹介文, class: "font-weight-bold" %>
+     <%= f.text_area :introduction, class: "form-control introduction", size: '90x8' %>
+   </div>
+   <div class="form-group">
+     <%= f.submit '更新する', class: 'btn btn-success' %>
+   </div>
+<% end %>

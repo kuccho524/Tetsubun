@@ -1,2 +1,15 @@
-<h1>Relationships#followings</h1>
-<p>Find me in app/views/relationships/followings.html.erb</p>
+<!-- フォロー一覧画面 -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 mx-auto">
+      <h1 class="heading">フォロー一覧</h1>
+
+      <!-- フォローしている時としていない時の表示 -->
+      <% if @users.empty? %>
+        <h3 class="no-follows text-center">ユーザはいません</h3>
+      <% else %>
+        <%= render 'relationships/index', users: @users %>
+      <% end %>
+    </div>
+  </div>
+</div>

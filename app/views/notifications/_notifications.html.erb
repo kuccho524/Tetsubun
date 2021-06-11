@@ -1,0 +1,32 @@
+<table class="table table-hover table-inverse">
+  <% notifications.each do |notification| %>
+    <% visitor = notification.visitor %>
+    <% visited = notification.visited %>
+  <tr>
+    <th>
+      <%= link_to user_path(visitor) do %>
+        <%= attachment_image_tag(visitor, :profile_image, fallback: "no_image.jpg", size: "50x50", class:"profile-img-circle") %>
+        <strong><%= visitor.name %></strong>さんが
+      <% end %>
+      <% case notification.action
+      when 'follow' then %>
+      あなたをフォローしました
+      <% when 'favorite' then %>
+        <%= link_to 'あなたの投稿', train_path(notification.train), style: "font-weight: bold;" %>
+        にいいねしました
+      <% when 'train_comment' then %>
+        <% if notification.train %>
+          <% if notification.train.user_id == visited.id %>
+            <%= link_to "あなたの投稿", train_path(notification.train), style: "font-weight: bold;" %>
+            にコメントしました
+          <% else %>
+            <%= link_to train_path(notification.train) do %>
+              <%= attachment_image_tag(notification.train.user, :profile_image, fallback: "no_image.jpg", size: "50x50", class: "profile-img-circle") %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </th>
+  </tr>
+  <% end %>
+</table>

@@ -1,0 +1,39 @@
+<!-- headerリスト -->
+<header class="sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+      <!-- Top画面へのリンクを表示 -->
+      <a href="/" class="top-icon navbar-brand text-white"><img src="/assets/電車アイコン.png" data-turbolinks="false"></a>
+
+      <!-- ユーザがログイン時に名前を表示する -->
+      <% if user_signed_in? %>
+        <p class="user-name">ようこそ、<%= current_user.name %> さん！</p>
+      <% end %>
+      <p id="notice"><%= notice %></p>
+
+      <!-- ユーザログイン時に検索窓を表示 -->
+      <% if user_signed_in? %>
+        <div class="search-form">
+          <%= form_with url: search_path, method: :get, local:true do |f| %>
+            <%= f.text_field :search, class: "form-control-sm mt-2", style: "width:100px;", placeholder: "検索" %>
+            <%= f.submit '検索', class: "btn btn-success btn-sm" %>
+          <% end %>
+        </div>
+      <% end %>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+         <ul class="navbar-nav ml-auto">
+          <% if user_signed_in? %>
+            <%= render 'layouts/user-signin' %>
+          <% else %>
+            <%= render 'layouts/nouser' %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

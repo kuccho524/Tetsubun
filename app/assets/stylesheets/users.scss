@@ -1,3 +1,44 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-info {
+  display: flex;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.user-detail {
+  margin-top: 20px;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.introduction {
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+p {
+  margin-top: 5px;
+}
+
+.edit-link {
+  margin-top: 20px;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.chat-link {
+  margin-top: 20px;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.links {
+  margin-bottom: 20px;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.my-page {
+  margin-top: 30px;
+}
+
+.form-group {
+  font-family: 'Kosugi Maru', sans-serif;
+}

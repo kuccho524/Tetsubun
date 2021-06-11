@@ -1,0 +1,54 @@
+<!-- ユーザの情報を表示 -->
+<div class="user-image">
+  <%= attachment_image_tag(user, :profile_image, width: "100%", height: "100px", fallback: "no_image.jpg") %>
+</div>
+<table class="user-detail">
+  <th>ユーザ名</th>
+  <th>　</th>
+  <th><%= user.name %></th>
+</table>
+<section class="introduction">
+  <p>
+   <strong>紹介文</strong><br>
+   <%= user.introduction %>
+  </p>
+</section>
+<table>
+  <tr>
+	  <th>フォロー</th>
+	  <th>　</th>
+	  <th><%= link_to user.followings.count, user_follows_path(user.id) %></th>
+  </tr>
+  <tr>
+	  <th>フォロワー</th>
+	  <th>　</th>
+	  <th class="follow-count"><%= link_to user.followers.count, user_followers_path(user.id) %></th>
+  </tr>
+</table>
+
+<!-- 更新画面へのリンク -->
+<% if current_user != user %>
+  <div class="follow_<%= user.id %>">
+    <%= render 'relationships/follow-btn', user: user %>
+  </div>
+<% else %>
+  <div class="edit-link">
+    <%= link_to '',edit_user_path(user), class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{user.id}" %>
+  </div>
+<% end %>
+
+<div class="chat-link">
+  <% if @user.id == current_user.id %>
+  <% else %>
+    <% if @isRoom == true %>
+      <a href="/rooms/<%= @roomId %>"><button type="button" class="btn btn-secondary">チャットへ</button></a>
+    <% else %>
+      <%= form_with model: @room, url: rooms_path, local:true do |f| %>
+        <%= fields_for @entry do |e| %>
+          <%= e.hidden_field :user_id, :value => @user.id %>
+        <% end %>
+        <%= f.submit "チャットを始める" %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
