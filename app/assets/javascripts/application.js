@@ -18,6 +18,7 @@
 //= require turbolinks
 //= require_tree .
 
+
 $(document).ready(function () {
   $("#train-images").skippr({
     transition : 'slide',
