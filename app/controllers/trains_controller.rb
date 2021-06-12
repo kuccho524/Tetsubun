@@ -22,7 +22,7 @@ class TrainsController < ApplicationController
     if @train.user == current_user
       render :edit
     else
-      redirect_to root_path, notice: "投稿者以外編集できません"
+      redirect_to train_path(@train), notice: "投稿者以外編集できません"
     end
   end
 
