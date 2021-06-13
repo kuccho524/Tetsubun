@@ -40,8 +40,8 @@
 <div class="chat-link">
   <% if @user.id == current_user.id %>
   <% else %>
-    <% if @isRoom == true %>
-      <a href="/rooms/<%= @roomId %>"><button type="button" class="btn btn-secondary">チャットへ</button></a>
+    <% if @is_room == true %>
+      <a href="/rooms/<%= @room_id %>"><button type="button" class="btn btn-secondary">チャットへ</button></a>
     <% else %>
       <%= form_with model: @room, url: rooms_path, local:true do |f| %>
         <%= fields_for @entry do |e| %>
