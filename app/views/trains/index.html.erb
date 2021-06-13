@@ -5,11 +5,13 @@
       <h1 class="heading">投稿一覧</h1>
 
       <!-- 投稿履歴一覧テーブル -->
-      <% if user_signed_in? %>
-        <%= render 'trains/login-index', trains: @trains %>
-      <% else %>
-        <%= render 'trains/public-index', trains: @trains %>
-      <% end %>
+      <div class="train-index">
+        <% if user_signed_in? %>
+          <%= render 'trains/login-index', trains: @trains %>
+        <% else %>
+          <%= render 'trains/public-index', trains: @trains %>
+        <% end %>
+      </div>
     </div>
     <div class="pagination mx-auto">
       <%= paginate @trains %>

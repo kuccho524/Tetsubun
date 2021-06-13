@@ -5,11 +5,13 @@
       <h1 class="heading">フォロー一覧</h1>
 
       <!-- フォローしている時としていない時の表示 -->
-      <% if @users.empty? %>
-        <h3 class="no-follows text-center">ユーザはいません</h3>
-      <% else %>
-        <%= render 'relationships/index', users: @users %>
-      <% end %>
+      <div class="follows">
+        <% if @users.empty? %>
+          <h3 class="no-followers text-center">ユーザはいません</h3>
+        <% else %>
+          <%= render 'relationships/index', users: @users %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
