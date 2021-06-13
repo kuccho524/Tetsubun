@@ -1,6 +1,6 @@
 <!-- ユーザの情報を表示 -->
 <div class="user-image">
-  <%= attachment_image_tag(user, :profile_image, width: "100%", height: "100px", fallback: "no_image.jpg") %>
+  <%= attachment_image_tag(user, :profile_image, width: "100%", height: "100px", format: 'jpg', fallback: "no_image.jpg") %>
 </div>
 <table class="user-detail">
   <th>ユーザ名</th>

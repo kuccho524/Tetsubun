@@ -21,15 +21,11 @@
 
   <div class="row">
     <div class="col-sm-10 mx-auto">
-
-      <!-- 投稿内容を表示 -->
       <%= render 'trains/info', train: @train %>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-7 mx-auto">
-
-      <!-- コメントを表示 -->
       <table class="train-comments">
         <%= render 'train_comments/index', train: @train %>
       </table>

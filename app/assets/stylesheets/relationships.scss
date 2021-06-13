@@ -7,3 +7,13 @@
   font-family: 'Kiwi Maru', serif;
   margin: 40px 0;
 }
+
+.followers,
+.follows {
+  margin: 40px 0;
+}
+
+.followers .profole_image,
+.follows .profile_image {
+ border-radius: 100%;
+}

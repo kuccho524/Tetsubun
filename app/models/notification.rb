@@ -1,6 +1,8 @@
 class Notification < ApplicationRecord
 
   # 通知のモデル
+
+  # アソシエーション
   default_scope -> { order(created_at: :desc) }
   belongs_to :train, optional: true
   belongs_to :train_comment, optional: true

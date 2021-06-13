@@ -7,14 +7,10 @@
     <div class="my-page col-12 mx-auto">
       <div class="user-info">
         <div class="col-3">
-
-          <!-- ユーザ情報を表示 -->
           <%= render 'users/info', user: @user %>
         </div>
         <div class="col-9">
-
-          <!-- 投稿履歴一覧テーブルを表示 -->
-        <%= render 'users/user-trains', trains: @trains %>
+          <%= render 'users/user-trains', trains: @trains %>
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@
     <div class="card">
       <div class="card-image">
         <%= link_to train_path(train.id) do %>
-          <%= attachment_image_tag train, :train_image, width: "100%" , height: "150px", fallback: "no_image.jpg" %>
+          <%= attachment_image_tag train, :train_image, width: "100%" , height: "150px", format: 'jpg', fallback: "no_image.jpg" %>
         <% end %>
       </div>
 

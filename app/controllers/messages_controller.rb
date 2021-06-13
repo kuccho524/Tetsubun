@@ -9,6 +9,8 @@ class MessagesController < ApplicationController
       @message = Message.new(message_params)
       @room = @message.room
       gets_entries_all_messages
+
+      # メッセージが送信された時、相手に通知を送る
       if @message.save
         @room_member_not_me = Entry.where(room_id: @room.id).where.not(user_id: current_user.id)
         @the_id = @room_member_not_me.find_by(room_id: @room.id)
@@ -19,6 +21,7 @@ class MessagesController < ApplicationController
           visitor_id: current_user.id,
           action: 'message'
         )
+
         # 自分の投稿に対するコメントの場合は、通知済みとする
         if notification.visitor_id == notification.visited_id
           notification.checked = true
@@ -33,6 +36,7 @@ class MessagesController < ApplicationController
   # ストロングパラメーター
   private
 
+  # チャットルームのメッセージを全て取得する
   def gets_entries_all_messages
     @messages = @room.messages.includes(:user).order("created_at asc")
     @entries = @room.entries
