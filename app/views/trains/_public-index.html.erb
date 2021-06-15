@@ -12,7 +12,7 @@
   <tbody>
     <% trains.each do |train| %>
       <tr>
-        <td><%= attachment_image_tag(train, :train_image, :fill, 50, 500, format: 'jpg', fallback: "no_image.jpg") %></td>
+        <td><%= attachment_image_tag(train, :train_image, size: "50x50", format: 'jpg', fallback: "no_image.jpg") %></td>
         <td><%= train.user.name %></td>
         <td><%= train.line %></td>
         <td><%= train.body %></td>

@@ -1,4 +1,3 @@
-<!-- 投稿履歴一覧を表示 -->
 <table class='table table-hover table-inverse'>
   <thead>
     <tr>
@@ -13,7 +12,7 @@
       <tr>
         <td>
           <%= link_to train_path(train.id) do %>
-            <%= attachment_image_tag(train, :train_image, :fill, 50, 50, format: 'jpg', fallback: "no_image.jpg") %>
+            <%= attachment_image_tag(train, :train_image, size: "50x50", format: 'jpg', fallback: "no_image.jpg") %>
           <% end %>
         </td>
         <td><%= train.line %></td>

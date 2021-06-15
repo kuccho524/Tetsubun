@@ -31,8 +31,17 @@
 }
 
 .chat-background {
-  background-color: #66ccff;
   margin: 30px 0;
+  display: flex;
+}
+
+.chat-lists {
+  margin: 0;
+  background-color: #fff;
+}
+
+.chat-messages {
+  background-color: #66ccff;
 }
 
 .top-link {
