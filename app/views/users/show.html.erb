@@ -8,16 +8,16 @@
 </div>
 
 
-<div class="my-page col-12 mx-auto">
+<div class="my-page col-sm-12 mx-auto">
 
   <!-- ユーザ情報を表示 -->
   <div class="user-info">
-    <div class="col-3">
+    <div class="col-sm3">
       <%= render 'users/info', user: @user %>
     </div>
 
     <!-- ユーザが投稿した履歴を表示 -->
-    <div class="col-9">
+    <div class="col-sm-9">
       <%= render 'users/user-trains', trains: @trains %>
     </div>
   </div>

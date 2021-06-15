@@ -1,37 +1,15 @@
-<script type="text/javascript">
-  $(document).ready(function(){
-  	$(window).on("load",function(){
-  		$('html,body').animate(
-        { scrollTop: $('html,body').get(0).scrollHeight }
-      );
-    });
-    $(window).on('keypress',function(e){
-      if(e.keyCode === 13){
-      	$('html,body').animate(
-          { scrollTop: $('html,body').get(0).scrollHeight }
-      	 );
-      }
-    });
-  });
-</script>
 <!-- チャット画面 -->
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
-      <h1 class="heading">チャットルーム</h1>
-      </div>
-  </div>
-
-  <div class="row">
-    <div class="chat-background col-12 mx-auto">
+    <div class="chat-background col-sm-12 mx-auto">
 
       <!-- 自分のチャットリスト一覧を表示 -->
-      <div class="chat-lists col-4">
+      <div class="chat-lists col-sm-4">
         <%= render 'rooms/list', rooms: @rooms %>
       </div>
 
       <!-- メッセージを表示 -->
-      <div class="chat-messages col-8">
+      <div class="chat-messages col-sm-8">
         <%= render 'messages/messages', messages: @messages %>
       </div>
     </div>

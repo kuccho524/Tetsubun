@@ -43,3 +43,19 @@ $(function() {
     event.preventDefault();
   });
 });
+
+document.addEventListener("turbolinks:load", function (event) {
+  // console.info(`Network Call Avoidance Workaround (for Turbolinks) attempting to short-circuit network calls.`);
+  const current_url = event.data.url; // Destination URL
+
+  //console.log(current_url);
+  const re = /.*\/rooms\/\d/
+  if (re.test(current_url)) {
+    //console.log('room!');
+    const obj = document.getElementById('message_message');
+    obj.scrollTop = obj.scrollHeight;
+    const element = document.documentElement;
+    const bottom = element.scrollHeight - element.clientHeight;
+    window.scroll(0, bottom);
+  }
+});
