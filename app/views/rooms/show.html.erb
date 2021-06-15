@@ -20,26 +20,21 @@
   <div class="row">
     <div class="col-sm-12">
       <h1 class="heading">チャットルーム</h1>
-
-      <!-- チャット部屋のユーザを表示 -->
-      <div class="chat-users">
-        <%= render 'rooms/chat-users', entries: @entries %>
       </div>
-    </div>
   </div>
 
   <div class="row">
-    <div class="chat-background col-sm-12 mx-auto">
+    <div class="chat-background col-12 mx-auto">
 
-      <!-- メッセージを表示 -->
-      <div class="chat-messages">
-        <%= render 'messages/messages', messages: @messages %>
+      <!-- 自分のチャットリスト一覧を表示 -->
+      <div class="chat-lists col-4">
+        <%= render 'rooms/list', rooms: @rooms %>
       </div>
 
-      <!-- メッセージ送信フォーム -->
-      <section class="message-form">
-        <%= render 'messages/message-form', message: @message %>
-      </section>
+      <!-- メッセージを表示 -->
+      <div class="chat-messages col-8">
+        <%= render 'messages/messages', messages: @messages %>
+      </div>
     </div>
   </div>
 
@@ -49,7 +44,3 @@
     </div>
   </div>
 </div>
-
-
-
-
