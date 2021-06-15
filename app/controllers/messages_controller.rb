@@ -12,7 +12,6 @@ class MessagesController < ApplicationController
 
       # メッセージが送信された時、相手に通知を送る
       if @message.save
-        flash[:notice] = "メッセージを送信しました。"
         @room_member_not_me = Entry.where(room_id: @room.id).where.not(user_id: current_user.id)
         @the_id = @room_member_not_me.find_by(room_id: @room.id)
         notification = current_user.active_notifications.new(
