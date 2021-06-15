@@ -10,6 +10,9 @@ class TrainCommentsController < ApplicationController
     @train_comment.user_id = current_user.id
     if @train_comment.save
       @train.create_notification_train_comment!(current_user, @train_comment.id)
+      flash[:notice] = "コメントを投稿しました"
+    else
+      flash[:notice] = "コメントを入力してください"
     end
   end
 

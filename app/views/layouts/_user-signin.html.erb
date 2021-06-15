@@ -1,7 +1,14 @@
 <!-- ユーザログイン時のナビゲーションの表示 -->
 <li class="balloonoya">
-  <%= link_to '', notifications_path(current_user), class: "fas fa-bell nav-link text-white" %>
-  <span class="balloon">通知一覧</span>
+  <%= link_to notifications_path(current_user) do %>
+    <% if unchecked_notifications.any? %>
+      <i class="fas fa-bell nav-link text-warning"></i>
+      <span class="balloon">通知あり</span>
+    <% else %>
+      <i class="fas fa-bell nav-link text-white"></i>
+      <span class="balloon">通知一覧</span>
+    <% end %>
+  <% end %>
 </li>
 <li class="balloonoya">
   <%= link_to '', rooms_path(current_user), class: "fas fa-envelope nav-link text-white" %>

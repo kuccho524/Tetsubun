@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   resources :rooms, only: [:index, :show, :create]
 
   # メッセージのルーティング
-  resources :messages, only: [:create]
+  resources :messages, only: [:create, :destroy]
 
   # 通知のルーティング
   get 'notifications/index' => 'notifications#index', as: 'notifications'

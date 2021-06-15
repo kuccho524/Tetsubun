@@ -7,6 +7,9 @@
             <strong class="my-message"><%= message.message %></strong>
           </div>
         </div>
+        <div class="right-link">
+          <%= link_to "削除", message_path(message.id), method: :delete, remote: true, class: "btn btn-danger", data: { confirm: 'このメッセージを削除しますか？' } %>
+        </div>
       <% else %>
         <div class="left-message">
           <div class="chat-icon">

@@ -19,7 +19,6 @@
         <td><%= train.body %></td>
         <% unless @user == current_user %>
           <td id="favorite_<%= train.id %>"><%= render 'favorites/favorite-btn', train: train %></td>
-          <td class="comment_count">コメント数： <%= train.train_comments.count %></td>
         <% end %>
       </tr>
     <% end %>
