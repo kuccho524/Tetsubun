@@ -2,34 +2,33 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 mx-auto">
-      <h1 class="heading">検索結果一覧</h1>
+      <h1 class="heading">検索結果</h1>
 
-      <table class='table table-hover table-inverse'>
-        <thead>
-          <tr>
-            <th></th>
-            <th>投稿者</th>
-            <th>鉄道会社</th>
-            <th>本文</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @trains.each do |train| %>
-            <tr>
-              <td>
-                <%= link_to train_path(train.id) do %>
-                  <%= attachment_image_tag(train, :train_image, :fill, 50, 50, fallback: "no_image.jpg") %>
-                <% end %>
-              </td>
-              <td><%= train.user.name %></td>
-              <td><%= train.line %></td>
-              <td><%= train.body %></td>
-              <td class="comment-count">コメント数： <%= train.train_comments.count %></td>
-            </tr>
+      <section class="search-result">
+        <!-- 検索対象によって表示内容を条件分岐 -->
+        <% if @range == "Train" %>
+          <div class="search-trains">
+            <%= render 'searches/search-trains', trains: @trains %>
+          </div>
+        <% else %>
+          <div class="search-users">
+            <%= render 'searches/search-users', users: @users %>
+          </div>
+        <% end %>
+      </section>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 mx-auto">
+      <!-- ページング -->
+        <div class="pagination">
+          <% if @range == "Train" %>
+            <%= paginate @trains %>
+          <% else %>
+            <%= paginate @users %>
           <% end %>
-        </tbody>
-      </table>
+        </div>
     </div>
   </div>
 </div>

@@ -19,13 +19,13 @@ class RelationshipsController < ApplicationController
   # フォロー一覧画面
   def followings
     user = User.find(params[:user_id])
-    @users = user.followings
+    @users = user.followings.page(params[:page]).per(10)
   end
 
   # フォロワー一覧画面
   def followers
     user = User.find(params[:user_id])
-    @users = user.followers
+    @users = user.followers.page(params[:page]).per(10)
   end
 
 end

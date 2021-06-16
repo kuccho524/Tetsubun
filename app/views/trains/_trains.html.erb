@@ -1,5 +1,4 @@
-<!-- 新着投稿8件を表示 -->
-<% train.first(8).each do |train| %>
+<% trains.each do |train| %>
   <div class="card-deck mb-5 mr-2">
     <div class="card">
       <div class="card-image">
@@ -20,6 +19,8 @@
         </div>
         <div class="card-train-line font-weight-bold"><%= train.line %></div>
         <div class="card-train-body"><%= train.body %></div>
+
+        <!-- ユーザログイン時と非ログイン時で条件分岐 -->
         <% if user_signed_in? %>
           <div id="favorite_<%= train.id %>"><%= render 'favorites/favorite-btn', train: train %></div>
           <div class="comment-count">コメント数： <%= train.train_comments.count %></div>
