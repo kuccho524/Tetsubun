@@ -43,6 +43,16 @@ class User < ApplicationRecord
     followings.include?(user)
   end
 
+  # 検索方法
+  def self.looks(search)
+    return none if search.blank?
+    if search
+      User.where(['name LIKE ?', "%#{search}%"])
+    else
+      User.all
+    end
+  end
+
   # フォローの通知
   def create_notification_follow!(current_user)
     temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ? ", current_user.id, id, 'follow'])
