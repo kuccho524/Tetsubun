@@ -10,6 +10,8 @@ class TrainCommentsController < ApplicationController
     @train_comment.user_id = current_user.id
     if @train_comment.save
       @train.create_notification_train_comment!(current_user, @train_comment.id)
+    else
+      render 'error'
     end
   end
 
