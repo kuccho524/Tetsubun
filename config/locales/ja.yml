@@ -13,6 +13,12 @@ ja:
       train_image: "画像"
       body: "本文"
 
+     train_comment:
+      comment: "コメント"
+
+     message:
+      message: "メッセージ"
+
  views:
     pagination:
       first: "&laquo; 最初"

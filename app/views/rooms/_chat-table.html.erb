@@ -1,23 +1,23 @@
 <% rooms.each do |room| %>
   <div class="card-deck mb-5 mr-2">
     <div class="card">
-      <div class="card-image">
-        <% room.users.each do |user| %>
-          <% unless user.id == current_user.id %>
-            <%= link_to room_path(room) do %>
+      <%= link_to room_path(room) do %>
+        <div class="card-image">
+          <% room.users.each do |user| %>
+            <% unless user.id == current_user.id %>
               <%= attachment_image_tag(user, :profile_image, width: "100%" , height: "125px", format: 'jpg', fallback: "no_image.jpg") %>
             <% end %>
           <% end %>
-        <% end %>
-      </div>
-      <div class="card-body">
-        <div class="card-name font-weight-bold">
-          <%= opponent_user(room) %>
         </div>
-        <div class="card-message">
-          <%= most_new_message_preview(room) %>
+        <div class="card-body">
+          <div class="card-name font-weight-bold">
+            <%= opponent_user(room) %>
+          </div>
+          <div class="card-message">
+            <%= most_new_message_preview(room) %>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 <% end %>

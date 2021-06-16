@@ -1,4 +1,3 @@
 $(".comment-count").html("コメント数: <%= @train.train_comments.count %>");
-$("#notice").html("<%= notice %>");
 $(".train-comments").html("<%= j(render 'train_comments/index', train: @train) %>");
 $("#train_comment_comment").val("");
