@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   # ユーザ認証機能のルーティング
   devise_for :users
 
+  # ゲストユーザ
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+  end
+
   # ユーザのルーティング
   resources :users, only: [:show, :edit, :update] do
 
