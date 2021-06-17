@@ -8,7 +8,7 @@ class HomesController < ApplicationController
       @trains_all = Train.includes(:user, :favorites)
       @user = User.find(current_user.id)
       @follow_users = @user.followings
-      @trains = @trains_all.where(user_id: @follow_users).order("created_at DESC").page(params[:page]).per(8)
+      @trains = @trains_all.where(user_id: @follow_users).order("created_at DESC")
     else
       @train = Train.all.reverse_order
     end

@@ -1,5 +1,5 @@
 <div class="d-flex flex-row flex-wrap">
-  <% trains.each do |train| %>
+  <% trains.first(16).each do |train| %>
     <div class="card-deck mb-5 mr-2">
       <div class="card">
         <div class="card-image">
@@ -21,8 +21,10 @@
           <div class="card-train-line font-weight-bold"><%= train.line %></div>
           <div class="card-train-body"><%= train.body %></div>
           <% if user_signed_in? %>
-            <div id="favorite_<%= train.id %>"><%= render 'favorites/favorite-btn', train: train %></div>
-            <div class="comment-count">コメント数： <%= train.train_comments.count %></div>
+            <div class="train-activities">
+              <div id="favorite_<%= train.id %>"><%= render 'favorites/favorite-btn', train: train %></div>
+              <div class="comment-count">コメント数： <%= train.train_comments.count %></div>
+            </div>
           <% end %>
         </div>
       </div>

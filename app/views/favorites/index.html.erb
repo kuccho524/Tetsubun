@@ -1,0 +1,16 @@
+<!-- いいね一覧画面 -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 mx-auto">
+      <h1 class="heading">いいね一覧</h1>
+
+      <section class="favorite-table">
+        <%= render 'favorites/favorite-table', favorites: @favorites %>
+      </section>
+
+      <section class="link mx-auto text-center">
+        <%= link_to 'ホームへ', root_path, class: "btn btn-secondary", data: {"turbolinks" => false } %>
+      </section>
+    </div>
+  </div>
+</div>

@@ -3,6 +3,12 @@ class FavoritesController < ApplicationController
 
   # いいね機能のコントローラー
 
+
+  def index
+    favorites = Favorite.where(user_id: current_user.id).pluck(:train_id)
+    @favorites = Train.find(favorites)
+  end
+
   # いいねする
   def create
     @train = Train.find(params[:train_id])

@@ -31,13 +31,13 @@
       <section class="new-train-posts">
         <% if user_signed_in? %>
           <!-- タイムラインを表示する -->
-          <h1 class="heading">タイムライン</h1>
+          <h1 class="heading"><span class="fas fa-file-alt"></span> タイムライン</h1>
           <div class="timeline">
             <%= render 'homes/timeline', trains: @trains %>
           </div>
         <% else %>
           <!-- 新着投稿を8件表示 -->
-          <h1 class="heading">新着投稿</h1>
+          <h1 class="heading"><span class="fas fa-plus-square"></span> 新着投稿</h1>
           <%= render 'homes/new-trains', train: @train %>
         <% end %>
       </section>
