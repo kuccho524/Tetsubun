@@ -25,6 +25,9 @@ Rails.application.routes.draw do
     resources :train_comments, only: [:create, :destroy]
   end
 
+  # いいね一覧画面のルーティング
+  resources :favorites, only: [:index]
+
   # チャットルームのルーティング
   resources :rooms, only: [:index, :show, :create]
 

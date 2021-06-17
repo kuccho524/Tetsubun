@@ -15,6 +15,10 @@
   <span class="balloon">チャット一覧</span>
 </li>
 <li class="balloonoya">
+  <%= link_to '', favorites_path(current_user), class: 'fas fa-star nav-link text-white' %>
+  <span class="balloon">いいね一覧</span>
+</li>
+<li class="balloonoya">
   <%= link_to '', user_path(current_user), class: 'fas fa-user nav-link text-white' %>
   <span class="balloon">マイページ</span>
 </li>
