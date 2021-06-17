@@ -27,12 +27,19 @@
         </div>
       </section>
 
-      <!-- 新着投稿を8件表示 -->
+
       <section class="new-train-posts">
-        <h1 class="heading">新着投稿</h1>
-        <div class="d-flex flex-row flex-wrap">
+        <% if user_signed_in? %>
+          <!-- タイムラインを表示する -->
+          <h1 class="heading">タイムライン</h1>
+          <div class="timeline">
+            <%= render 'homes/timeline', trains: @trains %>
+          </div>
+        <% else %>
+          <!-- 新着投稿を8件表示 -->
+          <h1 class="heading">新着投稿</h1>
           <%= render 'homes/new-trains', train: @train %>
-        </div>
+        <% end %>
       </section>
 
       <!-- 投稿一覧画面へのリンク -->
