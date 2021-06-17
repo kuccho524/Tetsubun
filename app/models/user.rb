@@ -74,7 +74,7 @@ class User < ApplicationRecord
   end
 
   # バリデーション
-  validates :name, presence: true
+  validates :name, length: { maximum: 7 }, presence: true
   validates :introduction, length: { maximum: 50 }
   attachment :profile_image, destroy: false
 end
