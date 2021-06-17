@@ -32,15 +32,40 @@
 
 .chat-background {
   margin: 30px 0;
-  display: flex;
 }
 
 .chat-lists {
-  margin: 0;
   background-color: #fff;
+  width: 800px;
+  overflow-x: scroll
+}
+
+.list {
+  list-style: none;
+  margin-left: -30px;
+  display: flex;
+}
+
+.chat-user {
+  height: 60px;
+  min-width: 150px;
+  margin: auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-user .profile_image {
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
+.chat-user-name {
+  margin-right: 10px;
 }
 
 .chat-messages {
+  width: 100%;
   background-color: #66ccff;
 }
 
@@ -54,7 +79,6 @@
 
 .chat-users {
   display: flex;
-  justify-content: center;
 }
 
 .messages {
@@ -68,12 +92,13 @@
 .right-link {
   text-align: right;
   margin-bottom: 10px;
+  margin-right: 5px;
 }
 
 .balloon-right {
   display: inline-block;
   position: relative;
-  margin: 0 0 10px 50px;
+  margin: 5px 0 10px 50px;
   padding: 10px;
   max-width: 250px;
   border-radius: 12px;
@@ -112,6 +137,7 @@
 .left-message .chat-icon {
   float: left;
   margin-right: -50px;
+  margin-left: 5px;
   width: 40px;
 }
 
@@ -123,7 +149,7 @@
 .balloon-left {
   display: inline-block;
   position: relative;
-  margin: 0 0 0 50px;
+  margin: 0 0 0 60px;
   padding: 10px;
   max-width: 250px;
   border-radius: 12px;
@@ -149,15 +175,4 @@
 
 .messsage-submit-btn {
   margin: 30px 0;
-}
-
-.chat-rooms {
-
-  &__chat {
-
-    &--chat-body {
-      color: black;
-      text-decoration: none;
-    }
-  }
 }

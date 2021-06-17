@@ -3,14 +3,14 @@
   <div class="row">
     <div class="chat-background col-sm-12 mx-auto">
 
-      <!-- 自分のチャットリスト一覧を表示 -->
-      <div class="chat-lists col-sm-4">
-        <%= render 'rooms/list', rooms: @rooms %>
+      <!-- メッセージを表示 -->
+      <div class="chat-messages">
+        <%= render 'messages/messages', messages: @messages %>
       </div>
 
-      <!-- メッセージを表示 -->
-      <div class="chat-messages col-sm-8">
-        <%= render 'messages/messages', messages: @messages %>
+      <!-- 自分のチャットリスト一覧を表示 -->
+      <div class="chat-lists mx-auto">
+        <%= render 'rooms/list', rooms: @rooms %>
       </div>
     </div>
   </div>
