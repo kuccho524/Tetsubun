@@ -6,14 +6,22 @@
  border-radius: 100%;
 }
 
+.right-message {
+  margin-right: 10px;
+}
+
 .message-form {
   text-align: center;
 }
 
 .opponent-user {
-  color: #fff;
+  color: black;
 }
 
 .error #error_explanation {
   color: black;
+}
+
+.messsage-submit-btn .btn {
+  margin-bottom: 30px;
 }

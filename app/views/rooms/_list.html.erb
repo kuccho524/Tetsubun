@@ -1,16 +1,14 @@
-<table class="table table-hover table-inverse">
-   <% @rooms.each do |room| %>
+<ul class="list">
+  <% rooms.each do |room| %>
     <% room.users.each do |user| %>
       <% unless user.id == current_user.id %>
-        <tr>
-          <th>
-              <%= link_to room_path(room.id) do %>
-                <%= attachment_image_tag(user, :profile_image, size: "50x50", format: 'jpg', fallback: "no_image.jpg") %>
-                <%= user.name %>
-              <% end %>
-          </th>
-        </tr>
-      <% end %>
+        <li class="chat-user border-right">
+          <%= link_to room_path(room.id) do %>
+            <%= attachment_image_tag(user, :profile_image, size: "50x50", format: 'jpg', fallback: "no_image.jpg") %>
+            <span class="chat-user-name"><%= user.name %></span>
+          <% end %>
+        </li>
+       <% end %>
     <% end %>
   <% end %>
-</table>
+</ul>
