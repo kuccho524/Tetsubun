@@ -9,7 +9,7 @@
           <h3 class="no-message">メッセージはありません</h3>
         <% else %>
           <section class="chat-rooms d-flex flex-row flex-wrap">
-            <%= render 'rooms/chat-table', rooms: @rooms %>
+            <%= render 'shared/chat-table', rooms: @rooms %>
           </section>
         <% end %>
       </div>

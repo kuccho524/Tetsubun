@@ -17,7 +17,7 @@
 
         <!-- 通知がある時は通知内容を表示する -->
         <% if @notifications.exists? %>
-          <%= render 'notifications/notifications', notifications: @notifications %>
+          <%= render 'shared/notifications', notifications: @notifications %>
         <% else %>
 
           <!-- 通知がない時 -->

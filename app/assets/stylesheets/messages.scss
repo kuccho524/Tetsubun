@@ -18,10 +18,12 @@
   color: black;
 }
 
-.error #error_explanation {
-  color: black;
-}
-
 .messsage-submit-btn .btn {
   margin-bottom: 30px;
+}
+
+.chat-messages .error {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
 }

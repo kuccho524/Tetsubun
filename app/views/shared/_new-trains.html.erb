@@ -20,10 +20,6 @@
           </div>
           <div class="card-train-line font-weight-bold"><%= train.line %></div>
           <div class="card-train-body"><%= train.body %></div>
-          <% if user_signed_in? %>
-            <div id="favorite_<%= train.id %>"><%= render 'favorites/favorite-btn', train: train %></div>
-            <div class="comment-count">コメント数： <%= train.train_comments.count %></div>
-          <% end %>
         </div>
       </div>
     </div>

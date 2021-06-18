@@ -1,6 +1,6 @@
 <!-- ユーザー情報編集フォーム -->
 <%= form_with model: user, url: user_path, local:true do |f| %>
-   <%= render 'layouts/errors', obj: user %>
+   <%= render 'shared/errors', obj: user %>
    <div class="form-group">
      <%= f.label :プロフィール画像, class: "font-weight-bold" %>
      <%= f.file_field :profile_image, class: "form-control-file user_image" %>

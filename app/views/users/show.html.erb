@@ -12,13 +12,13 @@
 
   <!-- ユーザ情報を表示 -->
   <div class="user-info">
-    <div class="col-sm3">
-      <%= render 'users/info', user: @user %>
+    <div class="col-sm-2">
+      <%= render 'shared/user-info', user: @user %>
     </div>
 
     <!-- ユーザが投稿した履歴を表示 -->
-    <div class="col-sm-9">
-      <%= render 'users/user-trains', trains: @trains %>
+    <div class="col-sm-10">
+      <%= render 'shared/user-trains', trains: @trains %>
     </div>
   </div>
 </div>
