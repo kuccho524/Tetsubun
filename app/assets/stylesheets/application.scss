@@ -17,6 +17,10 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
 
+html {
+ scroll-behavior: smooth;
+}
+
 #notice,
 #error_explanation {
  color: red;
