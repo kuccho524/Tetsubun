@@ -3,7 +3,7 @@
    <%= render 'shared/errors', obj: user %>
    <div class="form-group">
      <%= f.label :プロフィール画像, class: "font-weight-bold" %>
-     <%= f.file_field :profile_image, class: "form-control-file user_image" %>
+     <%= f.attachment_field :profile_image, class: "form-control-file user_image" %>
    </div>
    <div class="form-group">
      <%= f.label :ユーザ名, class: "font-weight-bold" %>
