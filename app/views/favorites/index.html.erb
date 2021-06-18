@@ -5,7 +5,11 @@
       <h1 class="heading">いいね一覧</h1>
 
       <section class="favorite-table">
-        <%= render 'favorites/favorite-table', favorites: @favorites %>
+        <% if @favorites.empty? %>
+          <h3 class="no-favorite text-center">いいねはありません</h3>
+        <% else %>
+          <%= render 'favorites/favorite-table', favorites: @favorites %>
+        <% end %>
       </section>
 
       <section class="link mx-auto text-center">

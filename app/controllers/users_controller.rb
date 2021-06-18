@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @train = @user.trains
-    @trains = @train.page(params[:page]).reverse_order.per(5)
+    @trains = @train.page(params[:page]).reverse_order.per(4)
     @current_user_entry = Entry.where(user_id: current_user.id)
     @user_entry = Entry.where(user_id: @user.id)
     if @user.id == current_user.id
@@ -31,10 +31,16 @@ class UsersController < ApplicationController
   # 編集画面
   def edit
     @user = User.find(params[:id])
-    if @user == current_user
+    if @user == current_user && @user.name != "guest"
       render "edit"
     else
-      redirect_to user_path(current_user)
+      if @user.name == "guest"
+        redirect_to user_path(current_user)
+        flash[:notice] = "ゲストユーザは編集できません。"
+      else
+        redirect_to user_path(current_user)
+        flash[:notice] = "本人以外編集できません。"
+      end
     end
   end
 

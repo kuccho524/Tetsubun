@@ -3,15 +3,15 @@
   <%= render 'layouts/errors', obj: train %>
   <div class="form-group">
     <%= f.label :画像, class: "font-weight-bold" %>
-    <%= f.attachment_field :train_image, class: "form-control-file train_image" %>
+    <%= f.file_field :train_image, class: "form-control-file train_image" %>
   </div>
   <div class="form-group">
-    <%= f.label :鉄道会社, class: "font-weight-bold" %><br>
+    <%= f.label :路線, class: "font-weight-bold" %><br>
     <%= f.select :line, Train.lines.keys.to_a %>
   </div>
   <div class="form-group">
     <%= f.label :本文, class: "font-weight-bold" %>
-    <%= f.text_area :body, class: 'form-control train_body' %>
+    <%= f.text_area :body, class: 'form-control train_body', size: "90x6" %>
   </div>
   <div class="form-group">
     <%= f.submit '更新する', class: 'btn btn-success' %>　|　<%= link_to '投稿を削除する', train_path(@train.id), method: :delete, data: { confirm: 'この投稿データを削除しますか？' }, class: "btn btn-danger" %>

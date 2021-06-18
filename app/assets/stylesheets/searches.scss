@@ -13,9 +13,20 @@
 .search-result {
   margin-top: 40px;
   margin-bottom: 20px;
+  min-height: 80vh;
+}
+
+.search-result .train_image {
+  border-radius: 100%;
 }
 
 .pagination {
   justify-content: center;
   margin-bottom: 20px;
+}
+
+.no-user,
+.no-train {
+  text-align: center;
+  font-family: 'Kosugi Maru', sans-serif;
 }
