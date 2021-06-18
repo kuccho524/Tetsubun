@@ -22,7 +22,7 @@
           <div class="card-train-body"><%= train.body %></div>
           <% if user_signed_in? %>
             <div class="train-activities">
-              <div id="favorite_<%= train.id %>"><%= render 'favorites/favorite-btn', train: train %></div>
+              <div id="favorite_<%= train.id %>"><%= render 'shared/favorite-btn', train: train %></div>
               <div class="comment-count">コメント数： <%= train.train_comments.count %></div>
             </div>
           <% end %>

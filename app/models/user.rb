@@ -28,6 +28,11 @@ class User < ApplicationRecord
   has_many :active_notifications, class_name: "Notification", foreign_key: "visitor_id", dependent: :destroy
   has_many :passive_notifications, class_name: "Notification", foreign_key: "visited_id", dependent: :destroy
 
+  # バリデーション
+  validates :name, length: { maximum: 7 }, presence: true
+  validates :introduction, length: { maximum: 50 }
+  attachment :profile_image, destroy: false
+
   # フォローする
   def follow(user_id)
     relationships.create(followed_id: user_id)
@@ -72,9 +77,4 @@ class User < ApplicationRecord
       user.password = SecureRandom.urlsafe_base64
     end
   end
-
-  # バリデーション
-  validates :name, length: { maximum: 7 }, presence: true
-  validates :introduction, length: { maximum: 50 }
-  attachment :profile_image, destroy: false
 end

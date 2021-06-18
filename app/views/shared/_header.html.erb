@@ -29,9 +29,9 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
          <ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
-            <%= render 'layouts/user-signin' %>
+            <%= render 'shared/user-signin' %>
           <% else %>
-            <%= render 'layouts/nouser' %>
+            <%= render 'shared/nouser' %>
           <% end %>
         </ul>
       </div>

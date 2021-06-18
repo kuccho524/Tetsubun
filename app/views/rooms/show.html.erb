@@ -5,12 +5,12 @@
 
       <!-- メッセージを表示 -->
       <div class="chat-messages">
-        <%= render 'messages/messages', messages: @messages %>
+        <%= render 'shared/messages', messages: @messages %>
       </div>
 
       <!-- 自分のチャットリスト一覧を表示 -->
       <div class="chat-lists mx-auto">
-        <%= render 'rooms/list', rooms: @rooms %>
+        <%= render 'shared/chat-list', rooms: @rooms %>
       </div>
     </div>
   </div>

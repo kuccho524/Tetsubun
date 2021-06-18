@@ -21,13 +21,13 @@
 
   <div class="row">
     <div class="col-sm-10 mx-auto">
-      <%= render 'trains/info', train: @train %>
+      <%= render 'shared/train-info', train: @train %>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-7 mx-auto">
       <table class="train-comments">
-        <%= render 'train_comments/index', train: @train %>
+        <%= render 'shared/train_comment-index', train: @train %>
       </table>
 
       <!-- コメント入力フォーム -->

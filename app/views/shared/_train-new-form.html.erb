@@ -1,6 +1,6 @@
 <!-- 新規投稿フォーム -->
 <%= form_with model: train, url: trains_path, method: :post, local:true do |f| %>
-  <%= render 'layouts/errors', obj: train %>
+  <%= render 'shared/errors', obj: train %>
   <div class="form-group">
     <%= f.label :画像, class: "font-weight-bold" %>
     <%= f.attachment_field :train_image, class: "form-control-file train_image" %>

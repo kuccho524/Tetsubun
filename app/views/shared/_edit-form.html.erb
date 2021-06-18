@@ -1,6 +1,6 @@
 <!-- 投稿内容編集フォーム -->
 <%= form_with model: train,local:true do |f| %>
-  <%= render 'layouts/errors', obj: train %>
+  <%= render 'shared/errors', obj: train %>
   <div class="form-group">
     <%= f.label :画像, class: "font-weight-bold" %>
     <%= f.file_field :train_image, class: "form-control-file train_image" %>

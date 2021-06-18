@@ -1,2 +1,2 @@
 $(".comment-count").html("コメント数: <%= @train.train_comments.count %>");
-$(".train-comments").html("<%= j(render 'train_comments/index', train: @train) %>");
+$(".train-comments").html("<%= j(render 'shared/train_comment-index', train: @train) %>");

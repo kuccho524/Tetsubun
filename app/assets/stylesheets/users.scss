@@ -5,11 +5,15 @@
 .user-info {
   min-height: 50vh;
   display: flex;
+  justify-content: center;
   font-family: 'Kosugi Maru', sans-serif;
 }
 
 .user-image .profile_image {
  border-radius: 100%;
+ display: flex;
+ justify-content: center;
+ margin: 0 auto;
 }
 
 .user-detail {

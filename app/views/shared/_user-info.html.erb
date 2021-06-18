@@ -29,7 +29,7 @@
 <!-- 更新画面へのリンク -->
 <% if current_user != user %>
   <div class="follow_<%= user.id %>">
-    <%= render 'relationships/follow-btn', user: user %>
+    <%= render 'shared/follow-btn', user: user %>
   </div>
 <% else %>
   <% unless current_user.name == "guest" %>

@@ -29,10 +29,10 @@
   <% end %>
 </div>
 <div class="error">
-  <%= render 'layouts/errors', obj: @message %>
+  <%= render 'shared/errors', obj: @message %>
 </div>
 
 <!-- メッセージ送信フォーム -->
 <section class="message-form">
-  <%= render 'messages/message-form', message: @message %>
+  <%= render 'shared/message-form', message: @message %>
 </section>

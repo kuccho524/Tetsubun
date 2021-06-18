@@ -18,7 +18,7 @@
         <td><%= train.line %></td>
         <td><%= train.body %></td>
         <% unless @user == current_user %>
-          <td id="favorite_<%= train.id %>"><%= render 'favorites/favorite-btn', train: train %></td>
+          <td id="favorite_<%= train.id %>"><%= render 'shared/favorite-btn', train: train %></td>
         <% end %>
       </tr>
     <% end %>
