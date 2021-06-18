@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .no-message {
+  min-height: 55vh;
   text-align: center;
   margin: 40px 0;
   font-family: 'Kosugi Maru', sans-serif;
@@ -176,4 +177,8 @@
 
 .messsage-submit-btn {
   margin: 30px 0;
+}
+
+.chat-rooms {
+  min-height: 60vh;
 }
