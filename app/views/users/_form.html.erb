@@ -3,8 +3,13 @@
    <%= render 'layouts/errors', obj: user %>
    <div class="form-group">
      <%= f.label :プロフィール画像, class: "font-weight-bold" %>
-     <%= f.attachment_field :profile_image, class: "form-control-file user_image" %>
+     <%= f.file_field :profile_image, class: "form-control-file user_image" %>
    </div>
+   <% if user.profile_image.present? %>
+     <%= image_tag user.profile_image, id: "preview" %>
+   <% else %>
+     <%= image_tag asset_path "no_image.jpg", id: "preview" %>
+   <% end %>
    <div class="form-group">
      <%= f.label :ユーザ名, class: "font-weight-bold" %>
      <%= f.text_field :name, class: "form-control name" %>
@@ -17,3 +22,13 @@
      <%= f.submit '更新する', class: 'btn btn-success' %>
    </div>
 <% end %>
+
+<script>
+   $('#user_profile_image').on('change', function (e) {
+     var reader = new FileReader();
+     reader.onload = function (e) {
+       $("#preview").attr('src', e.target.result);
+     }
+     reader.readAsDataURL(e.target.files[0]);
+   });
+</script>

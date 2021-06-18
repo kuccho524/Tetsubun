@@ -1,6 +1,6 @@
 <!-- ユーザの情報を表示 -->
 <div class="user-image">
-  <%= attachment_image_tag(user, :profile_image, width: "100%", height: "100px", format: 'jpg', fallback: "no_image.jpg") %>
+  <%= attachment_image_tag(user, :profile_image, size: "100x100", format: 'jpg', fallback: "no_image.jpg") %>
 </div>
 <table class="user-detail">
   <th>ユーザ名</th>
@@ -32,9 +32,11 @@
     <%= render 'relationships/follow-btn', user: user %>
   </div>
 <% else %>
-  <div class="edit-link">
-    <%= link_to '',edit_user_path(user), class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{user.id}" %>
-  </div>
+  <% unless current_user.name == "guest" %>
+    <div class="edit-link">
+      <%= link_to '',edit_user_path(user), class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{user.id}" %>
+    </div>
+  <% end %>
 <% end %>
 
 <div class="chat-link">
