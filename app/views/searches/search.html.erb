@@ -4,8 +4,8 @@
     <div class="col-sm-12 mx-auto">
       <h1 class="heading">検索結果</h1>
 
+      <!-- 検索対象によって表示内容を分ける -->
       <section class="search-result">
-        <!-- 検索対象によって表示内容を条件分岐 -->
         <% if @range == "Train" %>
           <div class="search-trains">
             <%= render 'shared/search-trains', trains: @trains %>
@@ -21,14 +21,15 @@
 
   <div class="row">
     <div class="col-sm-12 mx-auto">
+
       <!-- ページング -->
-        <div class="pagination">
-          <% if @range == "Train" %>
-            <%= paginate @trains %>
-          <% else %>
-            <%= paginate @users %>
-          <% end %>
-        </div>
+      <div class="pagination">
+        <% if @range == "Train" %>
+          <%= paginate @trains %>
+        <% else %>
+          <%= paginate @users %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

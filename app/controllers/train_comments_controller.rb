@@ -1,4 +1,5 @@
 class TrainCommentsController < ApplicationController
+  before_action :authenticate_user!
 
   # コメント機能のコントローラー
 

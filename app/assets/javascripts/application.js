@@ -19,7 +19,7 @@
 //= require turbolinks
 //= require_tree .
 
-
+// 画像スライダー
 $(document).ready(function () {
   $("#train-images").skippr({
     transition : 'slide',
@@ -35,6 +35,7 @@ $(document).ready(function () {
   });
 });
 
+// 矢印クリック時にトップへ戻る
 $(function() {
   $('#back a').on('click',function(event){
     $('body, html').animate({
@@ -44,6 +45,7 @@ $(function() {
   });
 });
 
+// チャットルームへ遷移した時、メッセージ入力欄表示する
 document.addEventListener("turbolinks:load", function (event) {
   // console.info(`Network Call Avoidance Workaround (for Turbolinks) attempting to short-circuit network calls.`);
   const current_url = event.data.url; // Destination URL
@@ -58,4 +60,26 @@ document.addEventListener("turbolinks:load", function (event) {
     const bottom = element.scrollHeight - element.clientHeight;
     window.scroll(0, bottom);
   }
+});
+
+// 記事に対しての画像プレビュー
+$(function(){
+    $(document).on('change', '.train_image', function (e) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        $(".train_image").attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+  });
+});
+
+// ユーザに対しての画像プレビュー
+$(function(){
+    $(document).on('change', '.user_image', function (e) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        $(".profile_image").attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+  });
 });
