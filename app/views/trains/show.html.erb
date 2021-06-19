@@ -6,37 +6,54 @@
     </div>
   </div>
 
-  <!-- 編集ページとTop画面のリンク先 -->
-  <div class="row">
-    <div class="links col-sm-10 mx-auto text-center">
-      <%= link_to '編集ページへ', edit_train_path(@train.id), class: "btn btn-info", style: "margin-right:50px;" %>
-      <%= link_to 'ホームへ', root_path, class: "btn btn-secondary", data: {"turbolinks" => false }, style: "margin-right:50px;" %>
-      <% if @train.user != current_user %>
-        <%= link_to 'ユーザページへ', user_path(@train.user), class: "btn btn-info" %>
-      <% else %>
-        <%= link_to 'マイページへ', user_path(@user), class: "btn btn-info" %>
-      <% end %>
+  <!-- ユーザログイン時の編集ページとホーム画面のリンク先 -->
+  <% if user_signed_in? %>
+    <div class="row">
+      <div class="links col-sm-10 mx-auto text-center">
+        <%= link_to '編集ページへ', edit_train_path(@train.id), class: "btn btn-info", style: "margin-right:50px;" %>
+        <%= link_to 'ホームへ', root_path, class: "btn btn-secondary", data: {"turbolinks" => false }, style: "margin-right:50px;" %>
+
+        <!-- 投稿者本人かそうでないかで表示内容とリンク先を分ける -->
+        <% unless @train.user == current_user %>
+          <%= link_to 'ユーザページへ', user_path(@train.user), class: "btn btn-info" %>
+        <% else %>
+          <%= link_to 'マイページへ', user_path(@user), class: "btn btn-info" %>
+        <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 
   <div class="row">
     <div class="col-sm-10 mx-auto">
       <%= render 'shared/train-info', train: @train %>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-7 mx-auto">
-      <table class="train-comments">
-        <%= render 'shared/train_comment-index', train: @train %>
-      </table>
 
-      <!-- コメント入力フォーム -->
-      <div class="comment-form mx-auto">
-        <%= form_with model:[@train, @train_comment] do |f| %>
-          <%= f.text_area :comment, size: '70x5' %><br>
-          <%= f.submit '送信', class: "btn btn-success" %>
-        <% end %>
+  <!-- ユーザログイン時にコメントを表示する -->
+  <% if user_signed_in? %>
+    <div class="row">
+      <div class="col-sm-7 mx-auto">
+        <table class="train-comments">
+          <%= render 'shared/train_comment-index', train: @train %>
+        </table>
+
+        <!-- コメント入力フォーム -->
+        <div class="comment-form mx-auto">
+          <%= form_with model:[@train, @train_comment] do |f| %>
+            <%= f.text_area :comment, size: '70x5' %><br>
+            <%= f.submit '送信', class: "btn btn-success" %>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
+
+  <!-- 非ユーザが詳細画面を閲覧している時、ホーム画面へのリンクを表示する -->
+  <% unless user_signed_in? %>
+    <div class="row">
+      <div class="links col-sm-10 mx-auto text-center">
+        <%= link_to 'ホームへ', root_path, class: "btn btn-secondary", data: { "turbolinks" => false }, style: "margin-right:50px;" %>
+      </div>
+    </div>
+  <% end %>
 </div>

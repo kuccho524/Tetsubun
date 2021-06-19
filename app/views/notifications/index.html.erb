@@ -6,21 +6,20 @@
     </div>
   </div>
 
-  <!-- 通知内容を表示 -->
   <div class="row">
     <div class="col-sm-8 mx-auto">
+
+      <!-- 通知内容の全削除 -->
       <section class="notification_all_delete">
         <%= link_to '通知内容を全て削除する', notification_all_delete_path, method: :delete, data: { confirm: '通知内容を削除しますか？' }, class: "btn btn-danger" %>
       </section>
 
       <section class="notification-table">
 
-        <!-- 通知がある時は通知内容を表示する -->
+        <!-- 通知の有無で表示内容を分ける -->
         <% if @notifications.exists? %>
           <%= render 'shared/notifications', notifications: @notifications %>
         <% else %>
-
-          <!-- 通知がない時 -->
           <h3 class="zero-notification text-center">通知はありません</h3>
         <% end %>
       </section>

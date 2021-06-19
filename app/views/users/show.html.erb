@@ -10,13 +10,11 @@
 
 <div class="my-page col-sm-12 mx-auto">
 
-  <!-- ユーザ情報を表示 -->
   <div class="user-info">
     <div class="col-sm-2">
       <%= render 'shared/user-info', user: @user %>
     </div>
-
-    <!-- ユーザが投稿した履歴を表示 -->
+    
     <div class="col-sm-10">
       <%= render 'shared/user-trains', trains: @trains %>
     </div>
