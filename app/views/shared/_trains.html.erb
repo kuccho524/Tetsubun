@@ -23,8 +23,10 @@
 
         <!-- ユーザログイン時と非ログイン時で条件分岐 -->
         <% if user_signed_in? %>
-          <div id="favorite_<%= train.id %>"><%= render 'shared/favorite-btn', train: train %></div>
-          <div class="comment-count">コメント数： <%= train.train_comments.count %></div>
+          <div class="train-activities">
+            <div id="favorite_<%= train.id %>"><%= render 'shared/favorite-btn', train: train %></div>
+            <div class="comment-count">コメント数： <%= train.train_comments.count %></div>
+          </div>
         <% end %>
       </div>
     </div>
