@@ -8,9 +8,12 @@ class HomesController < ApplicationController
       @trains_all = Train.includes(:user, :favorites)
       @user = User.find(current_user.id)
       @follow_users = @user.followings
-      @trains = @trains_all.where(user_id: @follow_users).order("created_at DESC")
+      @follow_users_trains = @trains_all.where(user_id: @follow_users).order("created_at DESC")
+      if @follow_users.empty?
+        @trains = Train.all.reverse_order
+      end
     else
-      @train = Train.all.reverse_order
+      @trains = Train.all.reverse_order
     end
   end
 

@@ -32,13 +32,20 @@
       <!-- ログイン/非ログインで表示内容を分ける -->
       <section class="new-train-posts">
         <% if user_signed_in? %>
-          <h1 class="heading"><span class="fas fa-file-alt"></span> タイムライン</h1>
-          <div class="timeline">
-            <%= render 'shared/timeline', trains: @trains %>
-          </div>
+
+          <!-- ログインしているユーザにフォローがいる時といない時で表示を変える -->
+          <% if @follow_users.empty? %>
+            <h1 class="heading"><span class="fas fa-plus-square"></span> 新着投稿</h1>
+            <%= render 'shared/new-trains', trains: @trains %>
+          <% else %>
+            <h1 class="heading"><span class="fas fa-file-alt"></span> タイムライン</h1>
+            <div class="timeline">
+              <%= render 'shared/timeline', follow_users_trains: @follow_users_trains %>
+            </div>
+          <% end %>
         <% else %>
           <h1 class="heading"><span class="fas fa-plus-square"></span> 新着投稿</h1>
-          <%= render 'shared/new-trains', train: @train %>
+          <%= render 'shared/new-trains', trains: @trains %>
         <% end %>
       </section>
 
