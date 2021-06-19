@@ -37,8 +37,8 @@ class MessagesController < ApplicationController
   def destroy
     @message = Message.find(params[:id])
     @room = @message.room
-    gets_entries_all_messages
     @message.destroy
+    gets_entries_all_messages
   end
 
   # ストロングパラメーター
