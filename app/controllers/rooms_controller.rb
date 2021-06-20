@@ -34,5 +34,4 @@ class RoomsController < ApplicationController
   def room_params
     params.require(:entry).permit(:user_id, :room_id).merge(:room_id => @room.id)
   end
-
 end

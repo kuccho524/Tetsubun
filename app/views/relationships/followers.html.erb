@@ -9,7 +9,7 @@
         <% if @users.empty? %>
           <h3 class="no-followers text-center">ユーザはいません</h3>
         <% else %>
-          <%= render 'shared/relationships-index', users: @users %>
+          <%= render 'shared/relationships/relationships-index', users: @users %>
         <% end %>
 
         <!-- ページング -->

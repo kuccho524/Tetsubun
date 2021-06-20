@@ -1,3 +1,5 @@
+<h1 class="heading"><span class="fas fa-file-alt"></span> タイムライン</h1>
+
 <!-- ユーザログイン時、タイムラインを16件表示する -->
 <div class="d-flex flex-row flex-wrap">
   <% follow_users_trains.first(16).each do |train| %>
@@ -23,7 +25,7 @@
           <div class="card-train-body"><%= train.body %></div>
           <% if user_signed_in? %>
             <div class="train-activities">
-              <div id="favorite_<%= train.id %>"><%= render 'shared/favorite-btn', train: train %></div>
+              <div id="favorite_<%= train.id %>"><%= render 'shared/favorites/favorite-btn', train: train %></div>
               <div class="comment-count">コメント数： <%= train.train_comments.count %></div>
             </div>
           <% end %>

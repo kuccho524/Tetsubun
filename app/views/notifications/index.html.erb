@@ -18,7 +18,7 @@
 
         <!-- 通知の有無で表示内容を分ける -->
         <% if @notifications.exists? %>
-          <%= render 'shared/notifications', notifications: @notifications %>
+          <%= render 'shared/notifications/notifications', notifications: @notifications %>
         <% else %>
           <h3 class="zero-notification text-center">通知はありません</h3>
         <% end %>

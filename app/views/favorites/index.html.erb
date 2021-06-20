@@ -9,7 +9,7 @@
         <% if @favorites.empty? %>
           <h3 class="no-favorite text-center">いいねはありません</h3>
         <% else %>
-          <%= render 'shared/favorite-table', favorites: @favorites %>
+          <%= render 'shared/favorites/favorite-table', favorites: @favorites %>
         <% end %>
       </section>
 

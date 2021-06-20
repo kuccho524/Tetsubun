@@ -18,15 +18,7 @@
 
       <!-- aboutと概要 -->
       <section class="about">
-        <h1 class="about-title">鉄分とは？</h1>
-        <div class="about-body">
-          <p>ここでは人間に必要なあの鉄分ではなく、</p>
-          <p>「鉄道に支えられている部分や、割合あるいは充実度」を表す言葉の略語である、「<strong>鉄分</strong>」を指します。</p>
-          <p>とは言いながらも、当サイトは鉄道ファン / 非鉄道ファン問わず、</p>
-          <p>このご時世で外出が難しくなった中でも鉄道を楽しみたいという方の為に、</p>
-          <p>少しでも尽力できればいいなと考えております。</p>
-          <p>どうかこの「<strong>鉄分</strong>」を楽しんでください。</p>
-        </div>
+        <%= render 'shared/homes/about' %>
       </section>
 
       <!-- ログイン/非ログインで表示内容を分ける -->
@@ -35,17 +27,14 @@
 
           <!-- ログインしているユーザにフォローがいる時といない時で表示を変える -->
           <% if @follow_users.empty? %>
-            <h1 class="heading"><span class="fas fa-plus-square"></span> 新着投稿</h1>
-            <%= render 'shared/new-trains', trains: @trains %>
+            <%= render 'shared/homes/new-trains', trains: @trains %>
           <% else %>
-            <h1 class="heading"><span class="fas fa-file-alt"></span> タイムライン</h1>
             <div class="timeline">
-              <%= render 'shared/timeline', follow_users_trains: @follow_users_trains %>
+              <%= render 'shared/homes/timeline', follow_users_trains: @follow_users_trains %>
             </div>
           <% end %>
         <% else %>
-          <h1 class="heading"><span class="fas fa-plus-square"></span> 新着投稿</h1>
-          <%= render 'shared/new-trains', trains: @trains %>
+          <%= render 'shared/homes/new-trains', trains: @trains %>
         <% end %>
       </section>
 
