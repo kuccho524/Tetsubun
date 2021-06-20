@@ -8,7 +8,6 @@
       <!-- ログイン入力フォーム -->
       <section class="login-form">
         <%= form_with model: @user, url: user_session_path, local:true do |f| %>
-          <%= render "devise/shared/error_messages", resource: resource %>
           <div class="field">
             <%= f.label :ユーザー名 %><br />
             <%= f.text_field :name, autofocus: true, class: "name" %>
