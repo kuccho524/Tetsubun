@@ -10,7 +10,7 @@ class Train < ApplicationRecord
 
   # バリデーション
   attachment :train_image, destroy: false
-  validates :body, length: { minimum: 3, maximum: 50 }
+  validates :body, length: { minimum: 3, maximum: 50 }, presence: true
   validates :train_image, presence: true
 
   # いいね
