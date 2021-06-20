@@ -1,0 +1,5 @@
+<%= form_with url: search_path, method: :get, local:true do |f| %>
+  <%= f.text_field :search, class: "form-control-sm mt-2", style: "width:100px;", placeholder: "検索" %>
+  <%= f.select :range, options_for_select([['ユーザ', 'User'], ['鉄道', 'Train']]) %>
+  <%= f.submit '検索', class: "btn btn-success btn-sm" %>
+<% end %>

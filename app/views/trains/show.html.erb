@@ -10,22 +10,14 @@
   <% if user_signed_in? %>
     <div class="row">
       <div class="links col-sm-10 mx-auto text-center">
-        <%= link_to '編集ページへ', edit_train_path(@train.id), class: "btn btn-info", style: "margin-right:50px;" %>
-        <%= link_to 'ホームへ', root_path, class: "btn btn-secondary", data: {"turbolinks" => false }, style: "margin-right:50px;" %>
-
-        <!-- 投稿者本人かそうでないかで表示内容とリンク先を分ける -->
-        <% unless @train.user == current_user %>
-          <%= link_to 'ユーザページへ', user_path(@train.user), class: "btn btn-info" %>
-        <% else %>
-          <%= link_to 'マイページへ', user_path(@user), class: "btn btn-info" %>
-        <% end %>
+        <%= render 'shared/trains/train-show-links', train: @train, user: @user %>
       </div>
     </div>
   <% end %>
 
   <div class="row">
     <div class="col-sm-10 mx-auto">
-      <%= render 'shared/train-info', train: @train %>
+      <%= render 'shared/trains/train-info', train: @train %>
     </div>
   </div>
 
@@ -33,17 +25,9 @@
   <% if user_signed_in? %>
     <div class="row">
       <div class="col-sm-7 mx-auto">
-        <table class="train-comments">
-          <%= render 'shared/train_comment-index', train: @train %>
-        </table>
-
-        <!-- コメント入力フォーム -->
-        <div class="comment-form mx-auto">
-          <%= form_with model:[@train, @train_comment] do |f| %>
-            <%= f.text_area :comment, size: '70x5' %><br>
-            <%= f.submit '送信', class: "btn btn-success" %>
-          <% end %>
-        </div>
+        <section id="comment-area">
+          <%= render 'shared/train_comments/train_comment-index', train: @train %>
+        </section>
       </div>
     </div>
   <% end %>

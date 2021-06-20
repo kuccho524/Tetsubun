@@ -13,7 +13,7 @@
       <td>フォロー数: <%= user.followings.count %></td>
       <td class="follower-count_<%= user.id %>">フォロワー数: <%= user.followers.count %></td>
       <% if current_user != user %>
-        <td class="follow_<%= user.id %>"><%= render 'shared/follow-btn', user: user %></td>
+        <td class="follow_<%= user.id %>"><%= render 'shared/relationships/follow-btn', user: user %></td>
       <% end %>
     </tr>
   <% end %>

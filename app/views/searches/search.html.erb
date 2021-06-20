@@ -8,11 +8,11 @@
       <section class="search-result">
         <% if @range == "Train" %>
           <div class="search-trains">
-            <%= render 'shared/search-trains', trains: @trains %>
+            <%= render 'shared/searches/search-trains', trains: @trains %>
           </div>
         <% else %>
           <div class="search-users">
-            <%= render 'shared/search-users', users: @users %>
+            <%= render 'shared/searches/search-users', users: @users %>
           </div>
         <% end %>
       </section>

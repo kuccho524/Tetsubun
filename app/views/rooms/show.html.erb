@@ -4,11 +4,11 @@
     <div class="chat-background col-sm-12 mx-auto">
 
       <div class="chat-messages">
-        <%= render 'shared/messages', messages: @messages %>
+        <%= render 'shared/messages/messages', messages: @messages %>
       </div>
 
       <div class="chat-lists mx-auto">
-        <%= render 'shared/chat-list', rooms: @rooms %>
+        <%= render 'shared/rooms/chat-list', rooms: @rooms %>
       </div>
     </div>
   </div>

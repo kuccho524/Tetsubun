@@ -1,6 +1,9 @@
 <!-- 投稿内容編集フォーム -->
 <%= form_with model: train,local:true do |f| %>
+
+  <!-- エラー表示 -->
   <%= render 'shared/errors', obj: train %>
+
   <div class="form-group">
     <%= f.label :画像, class: "font-weight-bold" %>
     <%= f.attachment_field :train_image, class: "form-control-file train_image" %>
@@ -17,6 +20,6 @@
     <%= f.text_area :body, class: 'form-control train_body', size: "90x6" %>
   </div>
   <div class="form-group">
-    <%= f.submit '更新する', class: 'btn btn-success' %>　|　<%= link_to '投稿を削除する', train_path(@train.id), method: :delete, data: { confirm: 'この投稿データを削除しますか？' }, class: "btn btn-danger" %>
+    <%= f.submit '更新する', class: 'btn btn-success' %>　|　<%= link_to '投稿を削除する', train_path(train.id), method: :delete, data: { confirm: 'この投稿データを削除しますか？' }, class: "btn btn-danger" %>
   </div>
 <% end %>
