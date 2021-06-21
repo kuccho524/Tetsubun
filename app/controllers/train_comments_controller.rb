@@ -19,8 +19,8 @@ class TrainCommentsController < ApplicationController
   # コメント削除機能
   def destroy
     @train = Train.find(params[:train_id])
-    train_comment = TrainComment.find(params[:id])
-    train_comment.destroy
+    @train_comment = TrainComment.find(params[:id])
+    @train_comment.destroy
   end
 
   # ストロングパラメーター
@@ -29,5 +29,4 @@ class TrainCommentsController < ApplicationController
   def train_comment_params
     params.require(:train_comment).permit(:comment)
   end
-
 end

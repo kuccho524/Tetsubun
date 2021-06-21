@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     else
       @current_user_entry.each do |cu|
         @user_entry.each do |u|
-          if cu.room_id == u.room_id then
+          if cu.room_id == u.room_id
             @is_room = true
             @room_id = cu.room_id
           end
@@ -60,5 +60,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :introduction, :profile_image)
   end
-
 end

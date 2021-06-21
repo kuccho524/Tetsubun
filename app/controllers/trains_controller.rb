@@ -65,5 +65,4 @@ class TrainsController < ApplicationController
   def train_params
     params.require(:train).permit(:train_image, :line, :body)
   end
-
 end

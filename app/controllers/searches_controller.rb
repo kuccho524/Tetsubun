@@ -12,5 +12,4 @@ class SearchesController < ApplicationController
       @users = User.looks(params[:search]).page(params[:page]).per(7)
     end
   end
-
 end

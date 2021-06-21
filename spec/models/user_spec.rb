@@ -52,56 +52,67 @@ RSpec.describe 'Userモデルのテスト', type: :model do
         expect(User.reflect_on_association(:trains).macro).to eq :has_many
       end
     end
+
     context 'Favoriteモデルとの関係' do
       it '1:Nとなっている' do
         expect(User.reflect_on_association(:favorites).macro).to eq :has_many
       end
     end
+
     context 'TrainCommentモデルとの関係' do
       it '1:Nとなっている' do
         expect(User.reflect_on_association(:train_comments).macro).to eq :has_many
       end
     end
+
     context '中間モデルPassiveOfRelationshipsとの関係' do
       it '1:Nとなっている' do
         expect(User.reflect_on_association(:passive_of_relationships).macro).to eq :has_many
       end
     end
+
     context '中間モデルRelationshipsとの関係' do
       it '1:Nとなっている' do
         expect(User.reflect_on_association(:relationships).macro).to eq :has_many
       end
     end
+
     context '中間モデルFollowersとの関係' do
       it '1:Nとなっている' do
         expect(User.reflect_on_association(:followers).macro).to eq :has_many
       end
     end
+
     context '中間モデルFollowingsとの関係' do
       it '1:Nとなっている' do
         expect(User.reflect_on_association(:followings).macro).to eq :has_many
       end
     end
+
     context 'Messageモデルとの関係' do
       it '1:Nとなっている' do
         expect(User.reflect_on_association(:messages).macro).to eq :has_many
       end
     end
+
     context 'Entryモデルとの関係' do
       it '1:Nとなっている' do
         expect(User.reflect_on_association(:entries).macro).to eq :has_many
       end
     end
+
     context 'Roomモデルとの関係' do
       it '1:Nとなっている' do
         expect(User.reflect_on_association(:rooms).macro).to eq :has_many
       end
     end
+
     context '中間モデルAcitiveNotificationsとの関係' do
       it '1:Nとなっている' do
         expect(User.reflect_on_association(:active_notifications).macro).to eq :has_many
       end
     end
+
     context '中間モデルPassiveNotificationsとの関係' do
       it '1:Nとなっている' do
         expect(User.reflect_on_association(:passive_notifications).macro).to eq :has_many

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   # ルートパス
   root to: 'homes#top'
 
@@ -13,7 +12,6 @@ Rails.application.routes.draw do
 
   # ユーザのルーティング
   resources :users, only: [:show, :edit, :update] do
-
     # フォロー機能のルーティング
     resource :relationships, only: [:create, :destroy]
     get 'relationships/followings' => 'relationships#followings', as: 'follows'
@@ -22,7 +20,6 @@ Rails.application.routes.draw do
 
   # 投稿（鉄道）に関するルーティング
   resources :trains do
-
     # いいね機能のルーティング
     resource :favorites, only: [:create, :destroy]
 
@@ -45,5 +42,4 @@ Rails.application.routes.draw do
 
   # 検索のルーティング
   get 'searches/search' => 'searches#search', as: 'search'
-
 end

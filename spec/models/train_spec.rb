@@ -16,7 +16,7 @@ RSpec.describe 'Trainモデルのテスト', type: :model do
         train.body = Faker::Lorem.characters(number: 3)
       end
       it '50文字以下であること: 50文字は◯' do
-        train.body = Facker::Lorem.characters(number: 50)
+        train.body = Faker::Lorem.characters(number: 50)
       end
       it '3文字以上であること: 2文字は×' do
         train.body = Faker::Lorem.characters(number: 2)
@@ -42,16 +42,19 @@ RSpec.describe 'Trainモデルのテスト', type: :model do
         expect(Train.reflect_on_association(:user).macro).to eq :belongs_to
       end
     end
+
     context 'Favoriteモデルとの関係' do
       it '1:Nとなっている' do
         expect(Train.reflect_on_association(:favorites).macro).to eq :has_many
       end
     end
+
     context 'TrainCommentモデルとの関係' do
       it '1:Nとなっている' do
         expect(Train.reflect_on_association(:train_comments).macro).to eq :has_many
       end
     end
+
     context 'Notificationモデルとの関係' do
       it '1:Nとなっている' do
         expect(Train.reflect_on_association(:notifications).macro).to eq :has_many
