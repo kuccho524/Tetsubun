@@ -1,5 +1,4 @@
 class TrainComment < ApplicationRecord
-
   # コメントのモデル
 
   # アソシエーション
@@ -9,5 +8,4 @@ class TrainComment < ApplicationRecord
 
   # バリデーション
   validates :comment, length: { maximum: 140 }, presence: true
-
 end

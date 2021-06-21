@@ -1,5 +1,4 @@
 module RoomsHelper
-
   # 最新メッセージのデータを取得して表示するメソッド
   def most_new_message_preview(room)
     # 最新メッセージのデータを取得する
@@ -25,5 +24,4 @@ module RoomsHelper
     # 名前を表示
     tag.p "#{name}", class: "dm_list__content__link__box__name"
   end
-
 end

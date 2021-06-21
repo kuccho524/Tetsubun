@@ -1,5 +1,4 @@
 class Message < ApplicationRecord
-
   # メッセージ機能のモデル
 
   # アソシエーション

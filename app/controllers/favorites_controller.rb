@@ -3,7 +3,6 @@ class FavoritesController < ApplicationController
 
   # いいね機能のコントローラー
 
-
   def index
     favorites = Favorite.where(user_id: current_user.id).pluck(:train_id)
     @favorites = Train.find(favorites)
@@ -23,5 +22,4 @@ class FavoritesController < ApplicationController
     favorite = @train.favorites.find_by(user_id: current_user.id)
     favorite.destroy
   end
-
 end

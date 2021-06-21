@@ -1,5 +1,4 @@
 class Train < ApplicationRecord
-
   # 鉄道のモデル
 
   # アソシエーション
@@ -73,7 +72,7 @@ class Train < ApplicationRecord
     notification.save if notification.valid?
   end
 
-  #enum
+  # enum
   enum line: {
     JR: 0,
     阪急: 1,
@@ -94,7 +93,6 @@ class Train < ApplicationRecord
     名鉄: 16,
     西鉄: 17,
     地下鉄: 18,
-    その他: 19
+    その他: 19,
   }
-
 end

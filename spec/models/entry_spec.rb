@@ -7,6 +7,7 @@ RSpec.describe 'Entryモデルのテスト', type: :model do
         expect(Entry.reflect_on_association(:user).macro).to eq :belongs_to
       end
     end
+
     context 'Roomモデルとの関係' do
       it 'N:1となっている' do
         expect(Entry.reflect_on_association(:room).macro).to eq :belongs_to
