@@ -2,19 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.notification_all_delete {
+  margin-top: 70px;
+  text-align: center;
+}
+
 .notification-table {
   margin: 40px 0;
   font-family: 'Kosugi Maru', sans-serif;
   min-height: 70vh;
-}
-
-.notification_all_delete {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.zero-notification {
-  font-family: 'Kosugi Maru', sans-serif;
 }
 
 .notification-content .profile_image {

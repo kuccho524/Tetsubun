@@ -1,13 +1,13 @@
 <!-- ユーザの情報を表示 -->
-<div class="user-image">
+<div class="user-info__user-image">
   <%= attachment_image_tag(user, :profile_image, size: "100x100", format: 'jpg', fallback: "no_image.jpg") %>
 </div>
-<table class="user-detail">
+<table class="user-info__user-detail">
   <th>ユーザ名</th>
   <th>　</th>
   <th><%= user.name %></th>
 </table>
-<section class="introduction">
+<section class="user-info__introduction">
   <p>
    <strong>紹介文</strong><br>
    <%= user.introduction %>

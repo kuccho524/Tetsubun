@@ -49,8 +49,8 @@ html {
   padding: 2px;
   background-color: rgba(0, 0, 127, 0.51);
   width: 180px;
-  left : 30%;
-  top : 100%;
+  left: 30%;
+  top: 100%;
   margin-top : 12px;
   font-size: 100%;
   color: #fff;
@@ -61,7 +61,7 @@ html {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   top: -12px;
-  left : 5%;
+  left: 5%;
   content: "";
   position: absolute;
 }
@@ -157,24 +157,87 @@ main {
   text-align: center;
 }
 
+.registration-form {
+  min-height: 60vh;
+  &__field {
+    font-family: 'Kosugi Maru', sans-serif;
+  }
+  &__actions {
+    font-family: 'Kosugi Maru', sans-serif;
+  }
+}
+
+.login-form {
+  min-height: 60vh;
+  &__field {
+    font-family: 'Kosugi Maru', sans-serif;
+  }
+  &__actions {
+    font-family: 'Kosugi Maru', sans-serif;
+  }
+}
+
 .login-form {
   margin: 30px 0;
-  min-height: 60vh;
 }
 
 .registration-form {
   margin: 30px 0;
-  min-height: 60vh;
 }
 
-.field {
-  font-family: 'Kosugi Maru', sans-serif;
+.registration-form__field,
+.login-form__field {
   margin: 20px 0;
 }
 
-.actions {
-  font-family: 'Kosugi Maru', sans-serif;
+.registration-form__actions,
+.login-form__actions {
   margin: 30px 0;
+}
+
+.card-deck {
+  width: 25%;
+  transition: all 0.3s ease 0s;
+}
+
+.card-deck:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.d-flex {
+  margin-top: 20px;
+}
+
+.card-body {
+  &__card-name {
+    font-family: 'Kosugi Maru', sans-serif;
+  }
+  &__card-train-line {
+    font-family: 'Kosugi Maru', sans-serif;
+  }
+  &__card-train-body {
+    font-family: 'Kosugi Maru', sans-serif;
+  }
+  &__train-activities {
+    display: flex;
+    font-family: 'Kosugi Maru', sans-serif;
+  }
+}
+
+.card-body__card-name {
+  margin-bottom: 5px;
+}
+
+.card-body__card-train-line {
+  margin-bottom: 5px;
+}
+
+.card-body__train-activities {
+  margin-top: 5px;
+}
+
+.card-body__train-activities--comment-count {
+  margin-left: 10px;
 }
 
 #back {
@@ -216,4 +279,8 @@ footer {
 
 .image-preview {
   margin-top: 15px;
+}
+
+.btn {
+  font-family: 'Kosugi Maru', sans-serif;
 }
