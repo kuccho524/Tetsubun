@@ -82,3 +82,12 @@
 .top-link {
   margin-bottom: 40px;
 }
+
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width: 425px) {
+  .chat-lists {
+    background-color: #fff;
+    width: 385px;
+    overflow-x: scroll
+  }
+}

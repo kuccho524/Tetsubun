@@ -61,7 +61,6 @@
       color: black;
     }
   }
-
 }
 
 .left-message {
@@ -118,7 +117,20 @@
   text-align: center;
 }
 
+.message-form textarea {
+  width: 590px;
+  height: 80px;
+}
+
 .messsage-submit-btn .btn {
   font-family: 'Kosugi Maru', sans-serif;
   margin-bottom: 30px;
+}
+
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width: 425px) {
+  .message-form textarea {
+  width: 385px;
+  height: 80px;
+}
 }

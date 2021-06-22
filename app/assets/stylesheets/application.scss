@@ -177,10 +177,7 @@ main {
   }
 }
 
-.login-form {
-  margin: 30px 0;
-}
-
+.login-form,
 .registration-form {
   margin: 30px 0;
 }
@@ -283,4 +280,125 @@ footer {
 
 .favorite-count {
   font-family: 'Kosugi Maru', sans-serif;
+}
+
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width: 425px) {
+  #notice {
+    display: none;
+  }
+
+  .user-name {
+    display: none;
+  }
+
+  #image-sliders {
+    height: 500px;
+  }
+
+  .train-image1 {
+    width: 100%;
+    height: 500px;
+    background-image: image-url("DSC_0354.JPG");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .train-image2 {
+    width: 100%;
+    height: 500px;
+    background-image: image-url("DSC_0596.JPG");
+    background-size: cover;
+  }
+
+  .train-image3 {
+    width: 100%;
+    height: 500px;
+    background-image: image-url("DSC_0594.JPG");
+    background-size: cover;
+  }
+
+  .train-image4 {
+    width: 100%;
+    height: 500px;
+    background-image: image-url("DSC_0495.JPG");
+    background-size: cover;
+  }
+
+  .train-image5 {
+    width: 100%;
+    height: 500px;
+    background-image: image-url("DSC_0330.JPG");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .train-image6 {
+    width: 100%;
+    height: 500px;
+    background-image: image-url("DSC_0328.JPG");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .train-image7 {
+    width: 100%;
+    height: 500px;
+    background-image: image-url("DSC_0278.JPG");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .train-image8 {
+    width: 100%;
+    height: 500px;
+    background-image: image-url("DSC_0155.JPG");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .d-flex {
+    margin: 20px auto;
+  }
+
+  .card-deck {
+    width: 30%;
+    transition: all 0.3s ease 0s;
+  }
+
+  .card-body {
+    &__train-activities {
+      display: block;
+    }
+  }
+
+  .card-body__train-activities--comment-count {
+    margin-left: 0;
+  }
+
+  .login-form,
+  .registration-form {
+    display: flex;
+    justify-content: center;
+  }
+
+  .registration-form {
+    &__actions {
+      text-align: center;
+    }
+  }
+
+  .login-form {
+    &__actions {
+      text-align: center;
+    }
+  }
+
+  #back {
+    display: none;
+  }
+
+  #back .top-icon {
+    dusplay: none;
+  }
 }

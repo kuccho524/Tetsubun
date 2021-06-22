@@ -1,9 +1,13 @@
-<%= link_to '編集ページへ', edit_train_path(train.id), class: "btn btn-info", style: "margin-right:50px;" %>
-<%= link_to 'ホームへ', root_path, class: "btn btn-secondary", data: {"turbolinks" => false }, style: "margin-right:50px;" %>
+<div class="link-buttons">
+  <%= link_to '編集ページへ', edit_train_path(train.id), class: "btn btn-info", style: "margin-right:50px;" %>
+  <%= link_to 'ホームへ', root_path, class: "btn btn-secondary", data: {"turbolinks" => false }, style: "margin-right:50px;" %>
 
-<!-- 投稿者本人かそうでないかで表示内容とリンク先を分ける -->
-<% unless @train.user == current_user %>
-  <%= link_to 'ユーザページへ', user_path(train.user), class: "btn btn-info" %>
-<% else %>
-  <%= link_to 'マイページへ', user_path(user), class: "btn btn-info" %>
-<% end %>
+  <!-- 投稿者本人かそうでないかで表示内容とリンク先を分ける -->
+  <% unless @train.user == current_user %>
+    <%= link_to 'ユーザページへ', user_path(train.user), class: "btn btn-info" %>
+  <% else %>
+    <%= link_to 'マイページへ', user_path(user), class: "btn btn-info" %>
+  <% end %>
+</div>
+
+

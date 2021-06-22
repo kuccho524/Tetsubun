@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
   }
-  &__user-detail {
+  &__user-name {
     font-family: 'Kosugi Maru', sans-serif;
   }
   &__introduction {
@@ -57,4 +57,44 @@ p {
 
 .user-info .train_image {
   border-radius: 100%;
+}
+
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width: 425px) {
+  .my-page {
+    width: 100%;
+    margin: 20px auto;
+  }
+
+  .user-info {
+    display: block;
+  }
+
+  .user-info__user-name {
+    margin: 10px auto;
+  }
+
+  .user-info__introduction {
+    text-align: center;
+  }
+
+  .user-info__relationship {
+    margin: 0 auto 20px;
+  }
+
+  .user-info .table th:nth-child(2) {
+    width: 75px;
+  }
+
+  .buttons {
+    text-align: center;
+  }
+
+  .chat-link {
+    margin-bottom: 20px;
+  }
+
+  .edit-link {
+    margin-bottom: 20px;
+  }
 }

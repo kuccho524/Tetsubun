@@ -16,6 +16,12 @@
   font-family: 'Kosugi Maru', sans-serif;
 }
 
+.image .train_image {
+  margin-top: 20px;
+  height: 500px;
+  width: 70%;
+}
+
 .train-comments {
   margin-bottom: 30px;
   font-family: 'Kosugi Maru', sans-serif;
@@ -26,10 +32,43 @@
   font-family: 'Kosugi Maru', sans-serif;
 }
 
+#comment-area textarea {
+  width: 650px;
+  height: 150px;
+}
+
 .form-group {
   font-family: 'Kosugi Maru', sans-serif;
 }
 
 .form-group:last-child {
   margin-bottom: 30px;
+}
+
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width: 425px) {
+  .link-buttons {
+    width: 220px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  .image .train_image {
+    height: 300px;
+    width: 350px;
+  }
+
+  #comment-area textarea {
+    width: 375px;
+    height: 100px;
+  }
+
+  .link-buttons .btn {
+    margin-bottom: 20px;
+  }
+
+  .train-info th {
+    width: 50px;
+  }
 }

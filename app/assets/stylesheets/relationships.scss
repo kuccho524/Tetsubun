@@ -19,3 +19,51 @@
 .follows .profile_image {
  border-radius: 100%;
 }
+
+.user-lists {
+  width: 450px;
+  list-style: none;
+  font-family: 'Kosugi Maru', sans-serif;
+  margin: 0 auto;
+}
+
+.user-area {
+  display: flex;
+}
+
+.user-follow-button {
+  margin-left: auto;
+}
+
+.user-lists li {
+  display: inline;
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+
+.user-lists:nth-child(10+n) {
+  margin: 0;
+}
+
+hr {
+  width: 450px;
+}
+
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width: 425px) {
+  .user-lists {
+    display: flex;
+    flex-wrap: wrap;
+    width: 360px;
+    margin: 0 auto;
+  }
+
+  .user-lists li {
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+
+  .user-lists__follow-counts {
+    margin-top: 10px;
+  }
+}

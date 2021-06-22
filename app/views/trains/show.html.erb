@@ -6,15 +6,6 @@
     </div>
   </div>
 
-  <!-- ユーザログイン時の編集ページとホーム画面のリンク先 -->
-  <% if user_signed_in? %>
-    <div class="row">
-      <div class="links col-sm-10 mx-auto text-center">
-        <%= render 'shared/trains/train-show-links', train: @train, user: @user %>
-      </div>
-    </div>
-  <% end %>
-
   <div class="row">
     <div class="col-sm-10 mx-auto">
       <%= render 'shared/trains/train-info', train: @train %>
@@ -28,6 +19,16 @@
         <section id="comment-area">
           <%= render 'shared/train_comments/train_comment-index', train: @train %>
         </section>
+      </div>
+    </div>
+  <% end %>
+
+
+  <!-- ユーザログイン時の編集ページとホーム画面のリンク先 -->
+  <% if user_signed_in? %>
+    <div class="row">
+      <div class="links col-sm-10 mx-auto text-center">
+        <%= render 'shared/trains/train-show-links', train: @train, user: @user %>
       </div>
     </div>
   <% end %>
