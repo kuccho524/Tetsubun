@@ -1,4 +1,4 @@
-<h1 class="heading"><span class="fas fa-plus-square"></span> 新着投稿</h1>
+<h1 class="new-train-posts__heading"><span class="fas fa-plus-square"></span> 新着投稿</h1>
 
 <!-- 非ユーザの時、新着投稿8件表示する -->
 <div class="d-flex flex-row flex-wrap">
@@ -11,11 +11,11 @@
           <% end %>
         </div>
         <div class="card-body">
-          <div class="card-name font-weight-bold">
+          <div class="card-body__card-name font-weight-bold">
             <%= train.user.name %>
           </div>
-          <div class="card-train-line font-weight-bold"><%= train.line %></div>
-          <div class="card-train-body"><%= train.body %></div>
+          <div class="card-body__card-train-line font-weight-bold"><%= train.line %></div>
+          <div class="card-body__card-train-body"><%= train.body %></div>
         </div>
       </div>
     </div>

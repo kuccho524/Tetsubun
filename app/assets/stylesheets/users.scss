@@ -7,22 +7,25 @@
   display: flex;
   justify-content: center;
   font-family: 'Kosugi Maru', sans-serif;
+  &__user-image .profile_image {
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  &__user-detail {
+    font-family: 'Kosugi Maru', sans-serif;
+  }
+  &__introduction {
+    font-family: 'Kosugi Maru', sans-serif;
+  }
 }
 
-.user-image .profile_image {
- border-radius: 100%;
- display: flex;
- justify-content: center;
- margin: 0 auto;
+.user-info__user-image .profile_image {
+  margin: 0 auto;
 }
 
-.user-detail {
+.user-info__user-detail {
   margin-top: 20px;
-  font-family: 'Kosugi Maru', sans-serif;
-}
-
-.introduction {
-  font-family: 'Kosugi Maru', sans-serif;
 }
 
 p {

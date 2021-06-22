@@ -2,63 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.about-title {
-  margin-top: 30px;
-  font-family: 'Kiwi Maru', serif;
-  font-weight: bold;
-  text-align: center;
+.about {
+  &__about-title {
+    font-family: 'Kiwi Maru', serif;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__about-body {
+    text-align: center;
+    font-family: 'Kiwi Maru', serif;
+  }
 }
 
-.about-body {
+.about__about-title {
+  margin-top: 30px;
+}
+
+.about__about-body {
   margin-top: 20px;
-  text-align: center;
-  font-family: 'Kiwi Maru', serif;
 }
 
 .new-train-posts {
+  &__heading {
+    font-family: 'Kiwi Maru', serif;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+.timeline {
+  &__heading {
+    font-family: 'Kiwi Maru', serif;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+.new-train-posts,
+.timeline {
   margin-top: 30px;
-}
-
-.new-train-posts > .heading {
-  text-align: center;
-  font-weight: bold;
-}
-
-.card-deck {
-  width: 25%;
-  transition: all 0.3s ease 0s;
-}
-
-.card-deck:hover {
-  transform: scale(1.1, 1.1);
-}
-
-.d-flex {
-  margin-top: 20px;
-}
-
-.card-name {
-  margin-bottom: 5px;
-  font-family: 'Kosugi Maru', sans-serif;
-}
-
-.card-train-line {
-  margin-bottom: 5px;
-  font-family: 'Kosugi Maru', sans-serif;
-}
-
-.card-train-body {
-  font-family: 'Kosugi Maru', sans-serif;
-}
-
-.train-activities {
-  display: flex;
-  margin-top: 5px;
-  font-family: 'Kosugi Maru', sans-serif;
-}
-
-.train-activities .comment-count {
-  margin-left: 10px;
 }
 
 .link {

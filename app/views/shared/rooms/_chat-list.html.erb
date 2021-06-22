@@ -3,10 +3,10 @@
   <% rooms.each do |room| %>
     <% room.users.each do |user| %>
       <% unless user.id == current_user.id %>
-        <li class="chat-user border-right">
+        <li class="list__chat-user border-right">
           <%= link_to room_path(room.id) do %>
             <%= attachment_image_tag(user, :profile_image, size: "50x50", format: 'jpg', fallback: "no_image.jpg") %>
-            <span class="chat-user-name"><%= user.name %></span>
+            <span class="list__chat-user--chat-user-name"><%= user.name %></span>
           <% end %>
         </li>
        <% end %>
