@@ -179,8 +179,8 @@ main {
 
 .login-form,
 .registration-form {
-  text-align: center;
   margin: 30px 0;
+  text-align: center;
 }
 
 .registration-form__field,
@@ -400,12 +400,6 @@ footer {
 
   .card-body__train-activities--comment-count {
     margin-left: 0;
-  }
-
-  .login-form,
-  .registration-form {
-    display: flex;
-    justify-content: center;
   }
 
   .registration-form {
