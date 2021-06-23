@@ -1,0 +1,34 @@
+<!-- 投稿履歴一覧テーブル -->
+<% trains.each do |train| %>
+  <div class="card-deck mb-5 mr-2">
+    <div class="card">
+      <div class="card-image">
+        <%= link_to train_path(train.id) do %>
+          <%= attachment_image_tag train, :train_image, width: "100%" , height: "150px", format: 'jpg', fallback: "no_image.jpg" %>
+        <% end %>
+      </div>
+
+      <div class="card-body">
+        <div class="card-body__card-name font-weight-bold">
+          <% if user_signed_in? %>
+            <%= link_to user_path(train.user) do %>
+              <%= train.user.name %>
+            <% end %>
+          <% else %>
+            <%= train.user.name %>
+          <% end %>
+        </div>
+        <div class="card-body__card-train-line font-weight-bold"><%= train.line %></div>
+        <div class="card-body__card-train-body"><%= train.body %></div>
+
+        <!-- ユーザログイン時と非ログイン時で条件分岐 -->
+        <% if user_signed_in? %>
+          <div class="card-body__train-activities">
+            <div id="favorite_<%= train.id %>"><%= render 'shared/favorites/favorite-btn', train: train %></div>
+            <div class="card-body__train-activities--comment-count">コメント数： <%= train.train_comments.count %></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

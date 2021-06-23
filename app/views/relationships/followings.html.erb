@@ -1,2 +1,22 @@
-<h1>Relationships#followings</h1>
-<p>Find me in app/views/relationships/followings.html.erb</p>
+<!-- フォロー一覧画面 -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 mx-auto">
+      <h1 class="heading">フォロー一覧</h1>
+
+      <!-- フォローしている時としていない時の表示を分ける -->
+      <div class="follows">
+        <% if @users.empty? %>
+          <h3 class="no-followers text-center">ユーザはいません</h3>
+        <% else %>
+          <%= render 'shared/relationships/relationships-index', users: @users %>
+        <% end %>
+
+        <!-- ページング -->
+        <div class="pagination mx-auto">
+          <%= link_to_next_page @users, '次のページ', class: "next" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

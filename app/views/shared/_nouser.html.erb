@@ -1,0 +1,17 @@
+<!-- 非ログイン時のヘッダー表示 -->
+<li class="balloonoya">
+  <%= link_to '', trains_path, class: 'fas fa-folder nav-link text-white' %>
+  <span class="balloon">記事一覧</span>
+</li>
+<li class="balloonoya">
+  <%= link_to '', new_user_registration_path, method: :get, class: 'fas fa-user-plus nav-link text-white' %>
+  <span class="balloon">新規登録</span>
+</li>
+<li class="balloonoya">
+  <%= link_to '', users_guest_sign_in_path, method: :post, class: 'fas fas fa-user-circle nav-link text-white' %>
+  <span class="balloon">ゲストログイン</span>
+</li>
+<li class="balloonoya">
+  <%= link_to '', new_user_session_path, method: :get, class: 'fas fa-sign-in-alt nav-link text-white' %>
+  <span class="balloon">ログイン</span>
+</li>

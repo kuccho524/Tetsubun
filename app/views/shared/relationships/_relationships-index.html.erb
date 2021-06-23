@@ -1,0 +1,25 @@
+<!-- フォロー/フォロワー一覧を表示 -->
+<% users.each do |user| %>
+  <ul class='user-lists'>
+    <section class="user-area">
+      <li>
+        <%= attachment_image_tag(user, :profile_image, size: "50x50", fallback: "no_image.jpg") %>
+      </li>
+      <li class="user-lists__user-name">
+        <%= link_to user_path(user) do %>
+          <%= user.name %>
+        <% end %>
+      </li>
+      <div class="user-follow-button">
+        <% if current_user != user %>
+          <li class="follow_<%= user.id %>"><%= render 'shared/relationships/follow-btn', user: user %></li>
+        <% end %>
+      </div>
+    </section>
+    <section class="follow-counts">
+      <li>フォロー数: <%= user.followings.count %></li>
+    <li class="follower-count_<%= user.id %>">フォロワー数: <%= user.followers.count %></li>
+    </section>
+  </ul>
+  <hr>
+<% end %>

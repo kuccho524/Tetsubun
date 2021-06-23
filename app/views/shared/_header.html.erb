@@ -1,0 +1,39 @@
+<!-- headerリスト -->
+<header class="sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+      <!-- Top画面へのリンクを表示 -->
+      <a href="/" class="home-icon navbar-brand text-white" data-turbolinks="false"><%= image_tag asset_path "電車アイコン.png" %></a>
+
+      <!-- ユーザがログイン時に名前を表示する -->
+      <% if user_signed_in? %>
+        <p class="user-name">ようこそ、<%= current_user.name %> さん！</p>
+      <% end %>
+      <p id="notice"><%= notice %></p>
+
+      <!-- ユーザログイン時に検索窓を表示 -->
+      <% if user_signed_in? %>
+        <div class="search-form">
+          <%= render 'shared/searches/search-form' %>
+        </div>
+      <% end %>
+
+      <!-- ハンバーガーバーボタン -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+        <!-- ログイン/非ログイン時でヘッダーリストを分岐 -->
+        <ul class="navbar-nav ml-auto">
+          <% if user_signed_in? %>
+            <%= render 'shared/user-signin' %>
+          <% else %>
+            <%= render 'shared/nouser' %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

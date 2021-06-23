@@ -1,3 +1,96 @@
 // Place all the styles related to the trains controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.links {
+  margin-top: 20px;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.train-index {
+  margin: 40px 0;
+}
+
+.train-info {
+  margin: 30px 0;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.image .train_image {
+  margin-top: 20px;
+  height: 500px;
+  width: 70%;
+}
+
+.train-comments {
+  margin-bottom: 30px;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.comment-form {
+  margin-bottom: 40px;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+#comment-area textarea {
+  width: 650px;
+  height: 150px;
+}
+
+.form-group {
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.form-group:last-child {
+  margin-bottom: 30px;
+}
+
+.link-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.link-buttons__edit {
+  margin-right: 50px;
+}
+
+.link-buttons__home {
+  margin-right: 50px;
+}
+
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width: 425px) {
+  .link-buttons {
+    width: 390px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .link-buttons__edit {
+    margin-right: auto;
+  }
+
+  .link-buttons__user {
+    margin-right: 20px;
+  }
+
+  .image .train_image {
+    height: 300px;
+    width: 350px;
+  }
+
+  #comment-area textarea {
+    width: 375px;
+    height: 100px;
+  }
+
+  .link-buttons .btn {
+    margin-bottom: 20px;
+  }
+
+  .train-info th {
+    width: 50px;
+  }
+}

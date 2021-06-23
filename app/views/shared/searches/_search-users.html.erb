@@ -1,0 +1,23 @@
+<!-- ユーザ検索結果表示画面 -->
+<table class="table">
+
+  <!-- 検索結果で表示を分ける -->
+  <% if users.empty? %>
+    <h3 class="no-user">該当するユーザはいません</h3>
+  <% else %>
+    <% users.each do |user| %>
+      <tr>
+        <td>
+          <%= attachment_image_tag(user, :profile_image, size: "50x50", fallback: "no_image.jpg") %>
+        </td>
+        <td>
+          <%= link_to user_path(user) do %>
+            <%= user.name %>
+          <% end %>
+        </td>
+        <td>フォロー数: <%= user.followings.count %></td>
+        <td>フォロワー数: <%= user.followers.count %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

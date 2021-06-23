@@ -1,3 +1,69 @@
 // Place all the styles related to the relationships controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.no-follows,
+.no-followers {
+  min-height: 60vh;
+  font-family: 'Kiwi Maru', serif;
+  margin: 40px 0;
+}
+
+.followers,
+.follows {
+  margin: 40px 0;
+  min-height: 60vh;
+}
+
+.followers .profile_image,
+.follows .profile_image {
+ border-radius: 100%;
+}
+
+.user-lists {
+  width: 450px;
+  list-style: none;
+  font-family: 'Kosugi Maru', sans-serif;
+  margin: 0 auto;
+}
+
+.user-area {
+  display: flex;
+}
+
+.user-follow-button {
+  margin-left: auto;
+}
+
+.user-lists li {
+  display: inline;
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+
+.user-lists:nth-child(10+n) {
+  margin: 0;
+}
+
+hr {
+  width: 450px;
+}
+
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width: 425px) {
+  .user-lists {
+    display: flex;
+    flex-wrap: wrap;
+    width: 360px;
+    margin: 0 auto;
+  }
+
+  .user-lists li {
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+
+  .user-lists__follow-counts {
+    margin-top: 10px;
+  }
+}

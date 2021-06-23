@@ -1,0 +1,9 @@
+<div class="left-message__chat-icon">
+  <%= link_to user_path(message.user) do %>
+    <%= attachment_image_tag(message.user, :profile_image, size: "30x30", format: 'jpg', fallback: "no_image.jpg") %>
+  <% end %>
+  <div class="left-message__chat-icon--opponent-user"><%= message.user.name %></div>
+</div>
+<div class="balloon-left">
+  <strong><%= message.message %></strong>
+</div>

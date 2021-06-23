@@ -1,0 +1,10 @@
+<!-- 通知内容を表示 -->
+<table class="notification-content table table-hover table-inverse">
+  <% notifications.each do |notification| %>
+    <tr>
+      <th>
+        <%= render 'shared/notifications/notification-table', notification: notification %>
+      </th>
+    </tr>
+  <% end %>
+</table>

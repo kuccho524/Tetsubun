@@ -1,0 +1,18 @@
+<!-- 投稿内容を表示 -->
+<div class="image text-center">
+  <%= attachment_image_tag(train, :train_image, format: "jpg", fallback: "no_image.jpg") %>
+</div>
+<div class="train-info col-sm-8 mx-auto">
+  <table>
+    <tr>
+      <th>会社</th>
+      <td>　</td>
+      <td><%= train.line %></td>
+    </tr>
+    <tr>
+      <th>本文</th>
+      <td>　</td>
+      <td><%= train.body %></td>
+    </tr>
+  </table>
+</div>

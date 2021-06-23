@@ -1,0 +1,28 @@
+ja:
+ activerecord:
+   models:
+     user: "ユーザ"
+   attributes:
+     user:
+      email: "メールアドレス"
+      password: "パスワード"
+      name: "ユーザ名"
+      introduction: "紹介文"
+
+     train:
+      train_image: "画像"
+      body: "本文"
+
+     train_comment:
+      comment: "コメント"
+
+     message:
+      message: "メッセージ"
+
+ views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "..."

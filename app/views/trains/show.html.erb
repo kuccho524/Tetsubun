@@ -1,2 +1,44 @@
-<h1>Trains#show</h1>
-<p>Find me in app/views/trains/show.html.erb</p>
+<!-- 投稿詳細画面 -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10 mx-auto">
+      <h1 class="heading">投稿詳細</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-10 mx-auto">
+      <%= render 'shared/trains/train-info', train: @train %>
+    </div>
+  </div>
+
+  <!-- ユーザログイン時にコメントを表示する -->
+  <% if user_signed_in? %>
+    <div class="row">
+      <div class="col-sm-7 mx-auto">
+        <section id="comment-area">
+          <%= render 'shared/train_comments/train_comment-index', train: @train %>
+        </section>
+      </div>
+    </div>
+  <% end %>
+
+
+  <!-- ユーザログイン時の編集ページとホーム画面のリンク先 -->
+  <% if user_signed_in? %>
+    <div class="row">
+      <div class="links col-sm-10 mx-auto text-center">
+        <%= render 'shared/trains/train-show-links', train: @train, user: @user %>
+      </div>
+    </div>
+  <% end %>
+
+  <!-- 非ユーザが詳細画面を閲覧している時、ホーム画面へのリンクを表示する -->
+  <% unless user_signed_in? %>
+    <div class="row">
+      <div class="links col-sm-10 mx-auto text-center">
+        <%= link_to 'ホームへ', root_path, class: "btn btn-secondary", data: { "turbolinks" => false }, style: "margin-right:50px;" %>
+      </div>
+    </div>
+  <% end %>
+</div>

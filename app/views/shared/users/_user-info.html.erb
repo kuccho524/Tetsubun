@@ -1,0 +1,48 @@
+<!-- ユーザの情報を表示 -->
+<div class="user-info__user-image">
+  <%= attachment_image_tag(user, :profile_image, size: "100x100", format: 'jpg', fallback: "no_image.jpg") %>
+</div>
+<table class="user-info__user-name">
+  <th>ユーザ名</th>
+  <th>　</th>
+  <th><%= user.name %></th>
+</table>
+<section class="user-info__introduction">
+  <p>
+   <strong>紹介文</strong><br>
+   <%= user.introduction %>
+  </p>
+</section>
+<table class="user-info__relationship">
+  <tr>
+	  <th>フォロー</th>
+	  <th>　</th>
+	  <th><%= link_to user.followings.count, user_follows_path(user.id) %></th>
+  </tr>
+  <tr>
+	  <th>フォロワー</th>
+	  <th>　</th>
+	  <th class="follow-count"><%= link_to user.followers.count, user_followers_path(user.id) %></th>
+  </tr>
+</table>
+
+<!-- 自分のマイページを見ているかで表示を分ける -->
+<% if current_user != user %>
+  <div class="buttons">
+    <div class="follow_<%= user.id %>">
+      <%= render 'shared/relationships/follow-btn', user: user %>
+    </div>
+
+    <div class="chat-link">
+      <%= render 'shared/rooms/chat-link', user: @user, room: @room, entry: @entry %>
+    </div>
+  </div>
+<% else %>
+
+  <!-- ゲストログインしている時は、ユーザ情報編集ボタンを表示させない -->
+  <% unless current_user.name == "guest" %>
+    <div class="edit-link">
+      <%= link_to '',edit_user_path(user), class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{user.id}" %>
+    </div>
+  <% end %>
+<% end %>

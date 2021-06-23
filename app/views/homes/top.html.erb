@@ -1,2 +1,47 @@
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
+<!-- 画像スライダー -->
+<section id="image-sliders">
+  <div id="train-images">
+    <div class="train-image1"></div>
+    <div class="train-image2"></div>
+    <div class="train-image3"></div>
+    <div class="train-image4"></div>
+    <div class="train-image5"></div>
+    <div class="train-image6"></div>
+    <div class="train-image7"></div>
+    <div class="train-image8"></div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 mx-auto">
+
+      <!-- aboutと概要 -->
+      <section class="about">
+        <%= render 'shared/homes/about' %>
+      </section>
+
+      <!-- ログイン/非ログインで表示内容を分ける -->
+      <section class="new-train-posts">
+        <% if user_signed_in? %>
+
+          <!-- ログインしているユーザにフォローがいる時といない時で表示を変える -->
+          <% if @follow_users.empty? %>
+            <%= render 'shared/homes/new-trains', trains: @trains %>
+          <% else %>
+            <div class="timeline">
+              <%= render 'shared/homes/timeline', follow_users_trains: @follow_users_trains %>
+            </div>
+          <% end %>
+        <% else %>
+          <%= render 'shared/homes/new-trains', trains: @trains %>
+        <% end %>
+      </section>
+
+      <!-- 投稿一覧画面へのリンク -->
+      <section class="link mx-auto text-center">
+        <%= link_to '投稿一覧ページへ', trains_path, class: 'btn btn-primary' %>
+      </section>
+    </div>
+  </div>
+</div>

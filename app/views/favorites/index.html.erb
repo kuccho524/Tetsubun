@@ -1,0 +1,21 @@
+<!-- いいね一覧画面 -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 mx-auto">
+      <h1 class="heading">いいね一覧</h1>
+
+      <!-- いいねをしたかで表示内容を分ける -->
+      <section class="favorite-table">
+        <% if @favorites.empty? %>
+          <h3 class="no-favorite text-center">いいねはありません</h3>
+        <% else %>
+          <%= render 'shared/favorites/favorite-table', favorites: @favorites %>
+        <% end %>
+      </section>
+
+      <section class="link mx-auto text-center">
+        <%= link_to 'ホームへ', root_path, class: "btn btn-secondary", data: {"turbolinks" => false } %>
+      </section>
+    </div>
+  </div>
+</div>

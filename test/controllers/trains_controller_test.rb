@@ -20,5 +20,4 @@ class TrainsControllerTest < ActionDispatch::IntegrationTest
     get trains_new_url
     assert_response :success
   end
-
 end

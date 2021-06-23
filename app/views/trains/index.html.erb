@@ -1,2 +1,19 @@
-<h1>Trains#index</h1>
-<p>Find me in app/views/trains/index.html.erb</p>
+<!-- 投稿履歴一覧ページ -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 mx-auto">
+      <h1 class="heading">記事一覧</h1>
+
+      <section class="train-index">
+        <div class="d-flex flex-row flex-wrap">
+          <%= render 'shared/trains/trains', trains: @trains %>
+
+          <!-- ページング -->
+          <div class="pagination mx-auto">
+            <%= link_to_next_page @trains, '次のページ', class: "next" %>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,93 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.no-message {
+  min-height: 55vh;
+  text-align: center;
+  margin: 40px 0;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.chat-rooms {
+  margin: 30px 0;
+  min-height: 60vh;
+}
+
+.card-deck {
+  margin-top: 20px;
+}
+
+.card-name {
+  margin-bottom: 5px;
+}
+
+.card-body {
+  &__card-name {
+    font-family: 'Kosugi Maru', sans-serif;
+  }
+  &__card-message {
+    font-family: 'Kosugi Maru', sans-serif;
+  }
+}
+
+.card-message {
+  margin-bottom: 5px;
+}
+
+.chat-background {
+  margin: 30px 0;
+}
+
+.chat-lists {
+  background-color: #fff;
+  width: 800px;
+  overflow-x: scroll
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  &__chat-user {
+    height: 60px;
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.list {
+  margin-left: -30px;
+}
+
+.list__chat-user {
+  margin: auto 10px;
+}
+
+.list__chat-user .profile_image {
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
+.list__chat-user--chat-user-name {
+  margin-right: 10px;
+}
+
+.chat-messages {
+  width: 100%;
+  background-color: #66ccff;
+}
+
+.top-link {
+  margin-bottom: 40px;
+}
+
+/* スマートフォンサイズ（425px）以下の際に適用される設定 */
+@media screen and (max-width: 425px) {
+  .chat-lists {
+    background-color: #fff;
+    width: 385px;
+    overflow-x: scroll
+  }
+}

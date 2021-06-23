@@ -1,0 +1,10 @@
+<!-- いいねボタンを表示 -->
+<% if train.favorited_by?(current_user) %>
+  <%= link_to train_favorites_path(train), method: :delete, remote: true, class: "fas fa-heart text-danger" do %>
+    <span class="favorite-count"><%= train.favorites.count %></span>
+  <% end %>
+<% else %>
+  <%= link_to train_favorites_path(train), method: :post, remote: true, class: "fas fa-heart heart-primary" do %>
+    <span class="favorite-count"><%= train.favorites.count %></span>
+  <% end %>
+<% end %>

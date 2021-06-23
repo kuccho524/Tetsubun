@@ -1,0 +1,23 @@
+<!-- コメントを表示 -->
+<table class="train-comments">
+  <% train.train_comments.each do |train_comment| %>
+    <tr>
+      <td class="font-weight-bold"><%= train_comment.user.name %></td>
+      <td>　</td>
+      <td><%= train_comment.comment %></td>
+      <td>　</td>
+      <% if train_comment.user == current_user %>
+        <td><%= link_to '削除', train_train_comment_path(train_comment.train_id, train_comment.id), method: :delete, remote: true, class: "btn btn-sm btn-danger", data: { confirm: 'コメントを削除しますか？' } %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<div id="comment-error">
+  <%= render 'shared/errors', obj: @train_comment %>
+</div>
+
+<!-- コメント入力フォーム -->
+<section class="comment-form mx-auto">
+  <%= render 'shared/train_comments/comment-form', train: train, train_comment: @train_comment %>
+</section>

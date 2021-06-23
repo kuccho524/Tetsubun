@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tetsubun</title>
+    <title>鉄分</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'shared/header' %>
+      <main>
+        <%= yield %>
+
+        <!-- ページの一番上へ戻るアイコン -->
+        <span id="back">
+          <a href="#" class="top-icon"><%= image_tag asset_path "上向きの矢印のアイコン素材.png" %></a>
+        </span>
+      </main>
+    <%= render 'shared/footer' %>
   </body>
 </html>

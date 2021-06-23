@@ -1,2 +1,35 @@
-<h1>Searches#search</h1>
-<p>Find me in app/views/searches/search.html.erb</p>
+<!-- 検索結果一覧 -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 mx-auto">
+      <h1 class="heading">検索結果</h1>
+
+      <!-- 検索対象によって表示内容を分ける -->
+      <section class="search-result">
+        <% if @range == "Train" %>
+          <div class="search-trains">
+            <%= render 'shared/searches/search-trains', trains: @trains %>
+          </div>
+        <% else %>
+          <div class="search-users">
+            <%= render 'shared/relationships/relationships-index', users: @users %>
+          </div>
+        <% end %>
+      </section>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 mx-auto">
+
+      <!-- ページング -->
+      <div class="pagination">
+        <% if @range == "Train" %>
+          <%= paginate @trains %>
+        <% else %>
+          <%= paginate @users %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

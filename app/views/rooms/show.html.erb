@@ -1,2 +1,23 @@
-<h1>Rooms#show</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
+<!-- チャット画面 -->
+<div class="container">
+  <div class="row">
+    <div class="chat-background col-sm-12 mx-auto">
+
+      <div class="chat-messages">
+        <%= render 'shared/messages/messages', messages: @messages %>
+      </div>
+
+      <div class="chat-lists mx-auto">
+        <%= render 'shared/rooms/chat-list', rooms: @rooms %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <!-- 自分のチャットルームへのリンク -->
+    <div class="top-link col-sm-12 mx-auto text-center">
+      <%= link_to 'チャットルーム一覧へ戻る', rooms_path(current_user), class: "btn btn-secondary" %>
+    </div>
+  </div>
+</div>

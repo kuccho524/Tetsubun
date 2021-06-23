@@ -1,0 +1,36 @@
+<!-- ユーザログイン時のヘッダー表示 -->
+<li class="balloonoya">
+  <%= link_to notifications_path(current_user) do %>
+    <% if unchecked_notifications.any? %>
+      <i class="fas fa-bell nav-link text-warning"></i>
+      <span class="balloon">通知あり</span>
+    <% else %>
+      <i class="fas fa-bell nav-link text-white"></i>
+      <span class="balloon">通知一覧</span>
+    <% end %>
+  <% end %>
+</li>
+<li class="balloonoya">
+  <%= link_to '', rooms_path(current_user), class: "fas fa-envelope nav-link text-white" %>
+  <span class="balloon">チャット一覧</span>
+</li>
+<li class="balloonoya">
+  <%= link_to '', favorites_path(current_user), class: 'fas fa-star nav-link text-white' %>
+  <span class="balloon">いいね一覧</span>
+</li>
+<li class="balloonoya">
+  <%= link_to '', user_path(current_user), class: 'fas fa-user nav-link text-white' %>
+  <span class="balloon">マイページ</span>
+</li>
+<li class="balloonoya">
+  <%= link_to '', trains_path, class: 'fas fa-folder nav-link text-white' %>
+  <span class="balloon">記事一覧</span>
+</li>
+<li class="balloonoya">
+  <%= link_to '', new_train_path, method: :get, class: 'fas fa-share-square nav-link text-white' %>
+  <span class="balloon">新規投稿</span>
+</li>
+<li class="balloonoya">
+  <%= link_to '', destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt nav-link text-white' %>
+  <span class="balloon">ログアウト</span>
+</li>
