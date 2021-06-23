@@ -45,13 +45,35 @@
   margin-bottom: 30px;
 }
 
+.link-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.link-buttons__edit {
+  margin-right: 50px;
+}
+
+.link-buttons__home {
+  margin-right: 50px;
+}
+
 /* スマートフォンサイズ（425px）以下の際に適用される設定 */
 @media screen and (max-width: 425px) {
   .link-buttons {
-    width: 220px;
+    width: 390px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin: 0 auto;
+  }
+
+  .link-buttons__edit {
+    margin-right: auto;
+  }
+
+  .link-buttons__user {
+    margin-right: 20px;
   }
 
   .image .train_image {
