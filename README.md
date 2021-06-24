@@ -28,17 +28,11 @@ FaceBookなどの有名なSNSは利用していて少し複雑だなと感じた
 鉄道に触れたい時、鉄道の写真を楽しみたい時。自分が撮影した鉄道の写真を公開したい時<br>
 
 ### 設計書
-画面遷移図<br>
-https://docs.google.com/presentation/d/1x784pqVEqCAz56WZRL-58tzVA4ksWyoe/edit#slide=id.p1<br>
-
 ER図<br>
 https://drive.google.com/file/d/1HkoP6Zt81_0ExnAuyxt7Wlo1jUF1dtiu/view<br>
 
 テーブル定義書<br>
 https://docs.google.com/spreadsheets/d/1Ue5IUjEn4C_pJGp478CfMVnlBtA3ijqe/edit#gid=79538340<br>
-
-アプリケーション詳細設計書<br>
-https://docs.google.com/spreadsheets/d/17LlS8oGryjKE0sBG0XpksbKoVZ5obTZg/edit#gid=1281505798<br>
 
 ### チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1Y4alK0mXdi5_dgJfUNuOS4w_xBcWF-woQOjHPi65cQ0/edit#gid=1373494904<br>
