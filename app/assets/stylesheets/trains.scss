@@ -37,8 +37,25 @@
   height: 150px;
 }
 
+.train-new-form,
+.train-edit-form {
+  margin-top: 30px;
+}
+
 .form-group {
   font-family: 'Kosugi Maru', sans-serif;
+}
+
+.new-train-image .train_image,
+.edit-train-image .train_image {
+  height: 350px;
+  width: 480px;
+}
+
+.train-new-form textarea,
+.train-edit-form textarea {
+  height: 150px;
+  width: 480px;
 }
 
 .form-group:last-child {
@@ -76,7 +93,9 @@
     margin-right: 20px;
   }
 
-  .image .train_image {
+  .image .train_image,
+  .new-train-image .train_image,
+  .edit-train-image .train_image {
     height: 300px;
     width: 350px;
   }
@@ -84,6 +103,12 @@
   #comment-area textarea {
     width: 375px;
     height: 100px;
+  }
+
+  .train-new-form textarea,
+  .train-edit-form textarea {
+    width: 350px;
+    height: 150px;
   }
 
   .link-buttons .btn {
