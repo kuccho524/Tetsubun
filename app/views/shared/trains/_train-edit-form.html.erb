@@ -4,22 +4,26 @@
   <!-- エラー表示 -->
   <%= render 'shared/errors', obj: train %>
 
-  <div class="form-group">
-    <%= f.label :画像, class: "font-weight-bold" %>
-    <%= f.attachment_field :train_image, class: "form-control-file train_image" %>
+  <section class="train-edit-form">
+    <div class="form-group">
+      <%= f.label :画像, class: "font-weight-bold" %>
+      <%= f.attachment_field :train_image, class: "form-control-file train_image" %>
 
-    <!-- 画像のプレビューを表示 -->
-    <%= attachment_image_tag train, :train_image, size: "350x300", format: 'jpg', fallback: "no_image.jpg", class: "image-preview" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :路線, class: "font-weight-bold" %><br>
-    <%= f.select :line, Train.lines.keys.to_a %>
-  </div>
-  <div class="form-group">
-    <%= f.label :本文, class: "font-weight-bold" %>
-    <%= f.text_area :body, class: 'form-control train_body', size: "40x8" %>
-  </div>
-  <div class="form-group">
-    <%= f.submit '更新する', class: 'btn btn-success' %>　|　<%= link_to '投稿を削除する', train_path(train.id), method: :delete, data: { confirm: 'この投稿データを削除しますか？' }, class: "btn btn-danger" %>
-  </div>
+      <!-- 画像のプレビューを表示 -->
+      <div class="edit-train-image">
+        <%= attachment_image_tag train, :train_image, format: 'jpg', fallback: "no_image.jpg", class: "image-preview" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :路線, class: "font-weight-bold" %><br>
+      <%= f.select :line, Train.lines.keys.to_a %>
+    </div>
+    <div class="form-group">
+      <%= f.label :本文, class: "font-weight-bold" %>
+      <%= f.text_area :body, class: 'form-control train_body', size: "40x4" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit '更新する', class: 'btn btn-success' %>　|　<%= link_to '投稿を削除する', train_path(train.id), method: :delete, data: { confirm: 'この投稿データを削除しますか？' }, class: "btn btn-danger" %>
+    </div>
+  </section>
 <% end %>
