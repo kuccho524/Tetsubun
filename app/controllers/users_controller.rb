@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     if @user == current_user && @user.name != "guest"
       render "edit"
     else
-      if @user.name == "guest"
+      if current_user.name == "guest"
         redirect_to user_path(current_user)
         flash[:notice] = "ゲストユーザは編集できません。"
       else
