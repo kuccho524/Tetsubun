@@ -9,7 +9,9 @@
      <%= f.attachment_field :profile_image, class: "form-control-file user_image" %>
 
      <!-- 画像のプレビューを表示 -->
-     <%= attachment_image_tag user, :profile_image, size: "350x300", format: 'jpg', fallback: "no_image.jpg", class: "image-preview" %>
+     <div class="image">
+        <%= attachment_image_tag user, :profile_image, format: 'jpg', fallback: "no_image.jpg", class: "image-preview" %>
+     </div>
    </div>
    <div class="form-group">
      <%= f.label :ユーザ名, class: "font-weight-bold" %>

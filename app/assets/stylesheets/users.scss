@@ -55,8 +55,23 @@ p {
   font-family: 'Kosugi Maru', sans-serif;
 }
 
+.image .profile_image {
+  height: 350px;
+  width: 480px;
+}
+
+.form-group .name input {
+  width: 480px;
+  height: 40px;
+}
+
 .user-info .train_image {
   border-radius: 100%;
+}
+
+.form-group .introduction textarea {
+  width: 480px;
+  height: 150px;
 }
 
 /* スマートフォンサイズ（425px）以下の際に適用される設定 */
@@ -84,6 +99,15 @@ p {
 
   .user-info .table th:nth-child(2) {
     width: 75px;
+  }
+
+  .user-info .favorite-count {
+    display: none;
+  }
+
+  .image .profile_image {
+    height: 300px;
+    width: 330px;
   }
 
   .buttons {
