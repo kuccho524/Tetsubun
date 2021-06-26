@@ -2,8 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.table {
+.user-lists {
   font-family: 'Kosugi Maru', sans-serif;
+  list-style: none;
+}
+
+.introduction {
+  margin: 5px auto;
 }
 
 .search-result {
