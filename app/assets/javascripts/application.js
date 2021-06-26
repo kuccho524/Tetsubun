@@ -83,3 +83,36 @@ $(function(){
     reader.readAsDataURL(e.target.files[0]);
   });
 });
+
+function addToNewUrl() {
+  let path = location.pathname;
+  let pattern = /^.*\/new.*$/
+
+  // URLが正しければ変更は不要
+  if(path.match(pattern)) return;
+
+  // URLを変更
+  history.replaceState('', '', `${ path }/new`)
+}
+
+function addToEditUrl() {
+  let path = location.pathname;
+  let pattern = /^.*\/edit.*$/
+
+  // URLが正しければ変更は不要
+  if(path.match(pattern)) return;
+
+  // URLを変更
+  history.replaceState('', '', `${ path }/edit`)
+}
+
+function addToSignUpUrl() {
+  let path = location.pathname;
+  let pattern = /^.*\/sign_up.*$/
+
+  // URLが正しければ変更は不要
+  if(path.match(pattern)) return;
+
+  // URLを変更
+  history.replaceState('', '', `${ path }/sign_up`)
+}
