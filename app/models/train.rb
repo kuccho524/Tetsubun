@@ -19,7 +19,6 @@ class Train < ApplicationRecord
 
   # 検索方法
   def self.looks(search)
-    return none if search.blank?
     if search
       Train.where(['body LIKE ?', "%#{search}%"])
     else
