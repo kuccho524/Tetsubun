@@ -62,6 +62,3 @@ https://docs.google.com/spreadsheets/d/1Y4alK0mXdi5_dgJfUNuOS4w_xBcWF-woQOjHPi65
 ### 使用素材
 - ICOOON MONO<br>
 https://icooon-mono.com/<br>
-
-- CMAN<br>
-https://sozai.cman.jp/<br>
